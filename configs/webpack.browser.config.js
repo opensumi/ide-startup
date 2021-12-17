@@ -16,7 +16,9 @@ const port = 8080;
 
 const isDevelopment = process.env['NODE_ENV'] === 'development' || process.env['NODE_ENV'] === 'dev';
 
-const idePkg = JSON.parse(fs.readFileSync(path.join(__dirname, '..', './node_modules/@opensumi/ide-core-browser/package.json')).toString());
+const idePkg = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '..', './node_modules/@opensumi/ide-core-browser/package.json')).toString(),
+);
 
 const styleLoader = process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader';
 
@@ -138,8 +140,12 @@ module.exports = {
       filename: 'main.css',
     }),
     new webpack.DefinePlugin({
-      'process.env.WORKSPACE_DIR': JSON.stringify(isDevelopment ? path.join(__dirname, '..', 'workspace') : process.env['WORKSPACE_DIR']),
-      'process.env.EXTENSION_DIR': JSON.stringify(isDevelopment ? path.join(__dirname, '..', 'extensions') : process.env['EXTENSION_DIR']),
+      'process.env.WORKSPACE_DIR': JSON.stringify(
+        isDevelopment ? path.join(__dirname, '..', 'workspace') : process.env['WORKSPACE_DIR'],
+      ),
+      'process.env.EXTENSION_DIR': JSON.stringify(
+        isDevelopment ? path.join(__dirname, '..', 'extensions') : process.env['EXTENSION_DIR'],
+      ),
       'process.env.REVERSION': JSON.stringify(idePkg.version || 'alpha'),
       'process.env.DEVELOPMENT': JSON.stringify(!!isDevelopment),
       'process.env.TEMPLATE_TYPE': JSON.stringify(isDevelopment ? process.env['TEMPLATE_TYPE'] : 'standard'),

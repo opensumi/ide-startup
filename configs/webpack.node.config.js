@@ -14,7 +14,10 @@ module.exports = {
     path: distDir,
   },
   node: false,
-  mode: 'development',
+  mode: 'production',
+  optimization: {
+    minimize: false
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     plugins: [
