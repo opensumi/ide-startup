@@ -7,33 +7,14 @@ on:
       - "v*.*"
 env:
   IMAGE_NAME: opensumi-web
-jobs:
-  get-tags:
-    runs-on: ubuntu-latest
-    env:
-      TZ: Asia/Shanghai
-    outputs:
-      tags: ${{ steps.set-output-id.outputs.tags }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: set-output
-        id: set-output-id
-        run: |
-          VERSION=edge
-          if [[ $GITHUB_REF == refs/tags/* ]]; then
-            VERSION=${GITHUB_REF#refs/tags/v}
-          fi
-          echo ::set-output name=tags::${VERSION}          
+  TZ: Asia/Shanghai
+  REGISTRY: ghcr.io
+jobs: 
   push-ghcr:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
-
-    env:
-      TZ: Asia/Shanghai
-      REGISTRY: ghcr.io
     steps:
       - uses: actions/checkout@v2
       - name: Login
@@ -42,10 +23,16 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
           password: ${{ secrets.PACKAGES_TOKEN }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       - name: Build && Push
         uses: docker/build-push-action@v2
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ needs.get-tags.outputs.tags }}            
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}          
