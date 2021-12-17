@@ -9,11 +9,9 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
   const app = new Koa();
   const deferred = new Deferred<http.Server>();
   const port = process.env.IDE_SERVER_PORT || 8000;
-  const workspaceDir = process.env.WORKSPACE_DIR || path.join(__dirname, '../../extensions');
-  const extensionDir = process.env.EXTENSION_DIR || path.join(__dirname, '../../workspace');
+  const workspaceDir = process.env.WORKSPACE_DIR || path.join(__dirname, '../extensions');
+  const extensionDir = process.env.EXTENSION_DIR || path.join(__dirname, '../workspace');
   let opts: IServerAppOpts = {
-    workspaceDir,
-    extensionDir,
     use: app.use.bind(app),
     marketplace: {
       showBuiltinExtensions: true,
@@ -27,7 +25,7 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
       workspaceDir,
       extensionDir,
     ],
-    extHost: process.env.EXTENSION_HOST_ENTRY || path.join(__dirname, '../../dist-node/hosted/ext.process.js'),
+    extHost: process.env.EXTENSION_HOST_ENTRY || path.join(__dirname, '..', '..', 'dist-node/hosted/ext.process.js'),
   };
   if (Array.isArray(arg1)) {
     opts = {

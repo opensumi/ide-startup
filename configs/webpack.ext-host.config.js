@@ -2,8 +2,8 @@ const path = require('path');
 
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-const tsConfigPath = path.join(__dirname, './tsconfig.json');
-const distDir = path.join(__dirname, './dist-node/hosted');
+const tsConfigPath = path.join(__dirname, '../tsconfig.json');
+const distDir = path.join(__dirname, '../dist-node/hosted');
 
 module.exports = {
   entry: require.resolve(
@@ -36,6 +36,8 @@ module.exports = {
           configFile: tsConfigPath,
         },
       },
+      { test: /\.css$/, loader: require.resolve('null-loader') },
+      { test: /\.less$/, loader: require.resolve('null-loader') },
     ],
   },
   externals: [

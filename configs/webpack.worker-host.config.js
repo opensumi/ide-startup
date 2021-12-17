@@ -2,8 +2,8 @@ const path = require('path');
 
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-const tsConfigPath = path.join(__dirname, './tsconfig.json');
-const distDir = path.join(__dirname, './dist');
+const tsConfigPath = path.join(__dirname, '..', 'tsconfig.json');
+const distDir = path.join(__dirname, '..', 'dist');
 
 module.exports = {
   entry: require.resolve('@opensumi/ide-extension/lib/hosted/worker.host.js'),
@@ -32,6 +32,8 @@ module.exports = {
         configFile: tsConfigPath,
       },
     },
+    { test: /\.css$/, loader: require.resolve('null-loader') },
+    { test: /\.less$/, loader: require.resolve('null-loader') },
     ],
   },
   resolveLoader: {

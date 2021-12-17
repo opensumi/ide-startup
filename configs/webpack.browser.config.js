@@ -10,20 +10,21 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
-const tsConfigPath = path.join(__dirname, './tsconfig.json');
-const dir = path.resolve('.')
+const tsConfigPath = path.join(__dirname, '../tsconfig.json');
+const srcDir = path.join(__dirname, '..', 'src', 'browser');
+const distDir = path.join(__dirname, '..', 'dist');
 const port = 8080;
 
 const isDevelopment = process.env['NODE_ENV'] === 'development' || process.env['NODE_ENV'] === 'dev';
 
-const idePkg = JSON.parse(fs.readFileSync(path.join(__dirname, './node_modules/@opensumi/ide-core-browser/package.json')).toString());
+const idePkg = JSON.parse(fs.readFileSync(path.join(__dirname, '..', './node_modules/@opensumi/ide-core-browser/package.json')).toString());
 
 const styleLoader = process.env.NODE_ENV === 'production'
   ? MiniCssExtractPlugin.loader
   : 'style-loader';
 
 module.exports = {
-  entry: dir + '/src/browser',
+  entry: srcDir,
   node: {
     net: "empty",
     child_process: "empty",
@@ -34,7 +35,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: dir + '/dist'
+    path: distDir
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
@@ -105,7 +106,19 @@ module.exports = {
             },
           }
         ]
-      }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
     ],
   },
   resolveLoader: {
@@ -120,14 +133,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public', 'index.html'),
+      template: path.join(__dirname, '..', 'public', 'index.html'),
     }),
     new MiniCssExtractPlugin({
       filename: 'main.css'
     }),
     new webpack.DefinePlugin({
-      'process.env.WORKSPACE_DIR': JSON.stringify(isDevelopment ? path.join(__dirname, 'workspace') :  process.env['WORKSPACE_DIR']),
-      'process.env.EXTENSION_DIR': JSON.stringify(isDevelopment ? path.join(__dirname, 'extensions') : process.env['EXTENSION_DIR']),
+      'process.env.WORKSPACE_DIR': JSON.stringify(isDevelopment ? path.join(__dirname, '..', 'workspace') :  process.env['WORKSPACE_DIR']),
+      'process.env.EXTENSION_DIR': JSON.stringify(isDevelopment ? path.join(__dirname, '..', 'extensions') : process.env['EXTENSION_DIR']),
       'process.env.REVERSION': JSON.stringify(idePkg.version || 'alpha'),
       'process.env.DEVELOPMENT': JSON.stringify(!!isDevelopment),
       'process.env.TEMPLATE_TYPE': JSON.stringify(isDevelopment ? process.env['TEMPLATE_TYPE'] : 'standard'),
@@ -139,11 +152,11 @@ module.exports = {
       clearConsole: true,
     }),
     new CopyPlugin([
-      { from: path.join(__dirname, './public/'), to: dir + '/dist' },
+      { from: path.join(__dirname, '..', './public/'), to: distDir },
     ]),
   ],
   devServer: {
-    contentBase: dir + '/dist',
+    contentBase: distDir,
     port,
     host: '127.0.0.1',
 
