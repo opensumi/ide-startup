@@ -19,7 +19,7 @@
     "start": "run-p start:client start:server start:webview",
     "start:client": "NODE_ENV=development webpack-dev-server --config ./configs/webpack.browser.config.js --progress --color --watch",
     "start:webview": "webpack-dev-server --config ./configs/webpack.webview.config.js",
-    "start:server": "NODE_ENV=development EXT_MODE=js KTLOG_SHOW_DEBUG=1 node --inspect=9991 -r ts-node/register -r tsconfig-paths/register ./src/node/index.ts"
+    "start:server": "EXT_MODE=js KTLOG_SHOW_DEBUG=1 node --inspect=9991 -r ts-node/register -r tsconfig-paths/register ./src/node/index.ts"
   },
   "dependencies": {
     "@opensumi/ide-addons": "^2.13.0",
@@ -105,7 +105,7 @@
     "serviceworker-webpack-plugin": "^1.0.1",
     "style-loader": "^0.23.1",
     "style-resources-loader": "^1.2.1",
-    "terser-webpack-plugin": "^5.3.0",
+    "terser-webpack-plugin": "^2.3.1",
     "ts-loader": "^6.0.1",
     "ts-node": "8.0.2",
     "tsconfig-paths": "^3.8.0",

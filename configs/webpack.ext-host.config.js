@@ -6,9 +6,7 @@ const tsConfigPath = path.join(__dirname, '../tsconfig.json');
 const distDir = path.join(__dirname, '../dist-node/hosted');
 
 module.exports = {
-  entry: require.resolve(
-    '@opensumi/ide-extension/lib/hosted/ext.process.js',
-  ),
+  entry: require.resolve('@opensumi/ide-extension/lib/hosted/ext.process.js'),
   target: 'node',
   output: {
     filename: 'ext.process.js',
@@ -31,7 +29,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
+        loader: require.resolve('ts-loader'),
         options: {
           configFile: tsConfigPath,
         },
@@ -41,12 +39,8 @@ module.exports = {
     ],
   },
   externals: [
-    function(context, request, callback) {
-      if (
-        ['node-pty', 'oniguruma', 'nsfw', 'spdlog', 'efsw', 'getmac'].indexOf(
-          request,
-        ) !== -1
-      ) {
+    function (context, request, callback) {
+      if (['node-pty', 'oniguruma', 'nsfw', 'spdlog', 'efsw', 'getmac'].indexOf(request) !== -1) {
         return callback(null, `commonjs ${request}`);
       }
       callback();
