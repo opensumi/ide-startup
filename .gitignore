@@ -8,3 +8,4 @@ workspace/
 extensions/
 *.d.ts
 *.d.ts.map
+*.lock
