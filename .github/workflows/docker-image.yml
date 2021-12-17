@@ -6,7 +6,7 @@ on:
     tags:
       - "v*.*"
 env:
-  IMAGE_NAME: opensumi-web
+  IMAGE_NAME: opensumi/opensumi-web
   TZ: Asia/Shanghai
   REGISTRY: ghcr.io
 jobs: 
