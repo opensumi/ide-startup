@@ -1,0 +1,10 @@
+node_modules/
+lib/
+dist/
+dist-node/
+*.error.log
+yarn.log
+workspace/
+extensions/
+*.d.ts
+*.d.ts.map
