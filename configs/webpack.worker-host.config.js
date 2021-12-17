@@ -13,27 +13,30 @@ module.exports = {
   },
   target: 'webworker',
   node: {
-    net: "empty",
+    net: 'empty',
   },
   devtool: 'none',
   mode: 'production',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
-    plugins: [new TsconfigPathsPlugin({
-      configFile: tsConfigPath,
-    })],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: tsConfigPath,
+      }),
+    ],
   },
   module: {
     exprContextCritical: false,
-    rules: [{
-      test: /\.tsx?$/,
-      loader: 'ts-loader',
-      options: {
-        configFile: tsConfigPath,
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: require.resolve('ts-loader'),
+        options: {
+          configFile: tsConfigPath,
+        },
       },
-    },
-    { test: /\.css$/, loader: require.resolve('null-loader') },
-    { test: /\.less$/, loader: require.resolve('null-loader') },
+      { test: /\.css$/, loader: require.resolve('null-loader') },
+      { test: /\.less$/, loader: require.resolve('null-loader') },
     ],
   },
   resolveLoader: {

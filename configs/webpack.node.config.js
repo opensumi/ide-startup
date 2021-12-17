@@ -14,7 +14,7 @@ module.exports = {
     path: distDir,
   },
   node: false,
-  mode: 'production',
+  mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     plugins: [
@@ -29,7 +29,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
+        loader: require.resolve('ts-loader'),
         options: {
           configFile: tsConfigPath,
         },
@@ -39,19 +39,9 @@ module.exports = {
     ],
   },
   externals: [
-    function(context, request, callback) {
-      if (
-        [
-          'node-pty',
-          'oniguruma',
-          'nsfw',
-          'spdlog',
-          'efsw',
-          'canvas',
-          'vscode-ripgrep',
-        ].indexOf(request) !== -1
-      ) {
-        return callback(null,  `commonjs ${request}`);
+    function (context, request, callback) {
+      if (['node-pty', 'oniguruma', 'nsfw', 'spdlog', 'efsw', 'canvas', 'vscode-ripgrep', 'vertx', 'keytar'].indexOf(request) !== -1) {
+        return callback(null, `commonjs ${request}`);
       }
       callback();
     },

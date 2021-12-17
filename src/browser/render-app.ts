@@ -21,8 +21,8 @@ export async function renderApp(opts: IClientAppOpts) {
   opts.layoutComponent = ToolbarActionBasedLayout;
   const app = new ClientApp(opts);
 
-  app.fireOnReload = (forcedReload: boolean) => {
-    window.location.reload(forcedReload);
+  app.fireOnReload = () => {
+    window.location.reload();
   };
 
   app.start(document.getElementById('main')!, 'web');
