@@ -1,4 +1,5 @@
 ## OpenSumi Web 集成示例
+![Docker Image CI](https://github.com/opensumi/ide-startup/actions/workflows/docker-image.yml/badge.svg)
 
 本项目为基于 OpenSumi 框架的 Web 版 IDE 集成示例
 
