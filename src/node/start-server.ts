@@ -14,9 +14,7 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
   let opts: IServerAppOpts = {
     use: app.use.bind(app),
     marketplace: {
-      showBuiltinExtensions: true,
-      accountId: 'nGJBcqs1D-ma32P3mBftgsfq',
-      masterKey: '-nzxLbuqvrKh8arE0grj2f1H',
+      endpoint: 'https://open-vsx.org/api',
     },
     processCloseExitThreshold: 5 * 60 * 1000,
     terminalPtyCloseThreshold: 5 * 60 * 1000,
