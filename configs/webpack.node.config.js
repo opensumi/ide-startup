@@ -16,7 +16,7 @@ module.exports = {
   node: false,
   mode: 'production',
   optimization: {
-    minimize: false
+    minimize: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
@@ -43,7 +43,19 @@ module.exports = {
   },
   externals: [
     function (context, request, callback) {
-      if (['node-pty', 'oniguruma', 'nsfw', 'spdlog', 'efsw', 'canvas', 'vscode-ripgrep', 'vertx', 'keytar'].indexOf(request) !== -1) {
+      if (
+        [
+          'node-pty',
+          'oniguruma',
+          'nsfw',
+          'spdlog',
+          'vm2',
+          'canvas',
+          'vscode-ripgrep',
+          'vertx',
+          'keytar',
+        ].indexOf(request) !== -1
+      ) {
         return callback(null, `commonjs ${request}`);
       }
       callback();
