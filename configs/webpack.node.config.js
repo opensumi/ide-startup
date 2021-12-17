@@ -48,15 +48,11 @@ module.exports = {
           'spdlog',
           'efsw',
           'canvas',
+          'vscode-ripgrep',
         ].indexOf(request) !== -1
       ) {
         return callback(null,  `commonjs ${request}`);
       }
-      // 构建公网版本时替换 @ali/vscode-ripgrep
-      if ('@ali/vscode-ripgrep' === request) {
-        return callback(null,  `commonjs vscode-ripgrep`);
-      }
-
       callback();
     },
   ],
