@@ -18,8 +18,9 @@ RUN yarn --registry https://registry.npm.taobao.org --ignore-scripts && \
 FROM node:14 as app
 
 ENV WORKSPACE_DIR /workspace
-ENV EXTENSION_DIR /extensions
+ENV EXTENSION_DIR /root/.sumi/extensions
 ENV EXT_MODE js
+ENV NODE_ENV production
 
 RUN mkdir -p ${WORKSPACE_DIR}  &&\
     mkdir -p ${EXTENSION_DIR}
@@ -32,7 +33,7 @@ RUN yarn --registry https://registry.npm.taobao.org
 
 COPY --from=builder dist dist
 COPY --from=builder dist-node dist-node
-COPY --from=builder extensions /extensions
+COPY --from=builder extensions /root/.sumi/extensions
 
 EXPOSE 8000
 
