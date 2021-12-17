@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "postinstall": "npm run prepare",
     "download:extensions": "node scripts/download.js",
     "compile:browser": "webpack --config ./configs/webpack.browser.config.js --progress --color",
     "compile:node": "webpack --config ./configs/webpack.node.config.js --progress --color",
