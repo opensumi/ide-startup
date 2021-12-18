@@ -10,7 +10,6 @@ import { SlotLocation } from '@opensumi/ide-core-browser';
 
 import './styles.less';
 
-
 renderApp({
   modules: [
     ...CommonBrowserModules,

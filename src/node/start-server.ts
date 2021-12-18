@@ -22,6 +22,7 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
     staticAllowPath: [
       workspaceDir,
       extensionDir,
+      '/',
     ],
     extHost: process.env.EXTENSION_HOST_ENTRY || path.join(__dirname, '..', '..', 'dist-node/hosted/ext.process.js'),
   };
