@@ -14,7 +14,6 @@ import { OutputModule } from '@opensumi/ide-output/lib/browser';
 import { QuickOpenModule } from '@opensumi/ide-quick-open/lib/browser';
 import { ClientCommonModule, BrowserModule, ConstructorOf } from '@opensumi/ide-core-browser';
 import { ThemeModule } from '@opensumi/ide-theme/lib/browser';
-
 import { OpenedEditorModule } from '@opensumi/ide-opened-editor/lib/browser';
 import { OutlineModule } from '@opensumi/ide-outline/lib/browser';
 import { PreferencesModule } from '@opensumi/ide-preferences/lib/browser';
@@ -23,14 +22,9 @@ import { OverlayModule } from '@opensumi/ide-overlay/lib/browser';
 import { ExtensionStorageModule } from '@opensumi/ide-extension-storage/lib/browser';
 import { StorageModule } from '@opensumi/ide-storage/lib/browser';
 import { SCMModule } from '@opensumi/ide-scm/lib/browser';
-
 import { MarkersModule } from '@opensumi/ide-markers/lib/browser';
-
-// import { Terminal2Module } from '@opensumi/ide-terminal2/lib/browser';
-
 import { WebviewModule } from '@opensumi/ide-webview';
 import { MarkdownModule } from '@opensumi/ide-markdown';
-
 import { LogModule } from '@opensumi/ide-logs/lib/browser';
 import { WorkspaceEditModule } from '@opensumi/ide-workspace-edit/lib/browser';
 import { ExtensionModule } from '@opensumi/ide-extension/lib/browser';
@@ -39,11 +33,9 @@ import { DebugModule } from '@opensumi/ide-debug/lib/browser';
 import { VariableModule } from '@opensumi/ide-variable/lib/browser';
 import { KeymapsModule } from '@opensumi/ide-keymaps/lib/browser';
 import { MonacoEnhanceModule } from '@opensumi/ide-monaco-enhance/lib/browser/module';
-
 import { OpenVsxExtensionManagerModule } from '@opensumi/ide-extension-manager/lib/browser';
 import { TerminalNextModule } from '@opensumi/ide-terminal-next/lib/browser';
 import { CommentsModule } from '@opensumi/ide-comments/lib/browser';
-
 import { ClientAddonModule } from '@opensumi/ide-addons/lib/browser';
 import { TaskModule } from '@opensumi/ide-task/lib/browser';
 import { TestingModule } from '@opensumi/ide-testing/lib/browser';
@@ -66,7 +58,6 @@ export const CommonBrowserModules: ConstructorOf<BrowserModule>[] = [
   OutputModule,
   QuickOpenModule,
   MarkersModule,
-
   ThemeModule,
   WorkspaceModule,
   ExtensionStorageModule,
@@ -84,13 +75,9 @@ export const CommonBrowserModules: ConstructorOf<BrowserModule>[] = [
   VariableModule,
   KeymapsModule,
   TerminalNextModule,
-
-  // Extension Modules
   ExtensionModule,
   OpenVsxExtensionManagerModule,
   MonacoEnhanceModule,
-
-  // addons
   ClientAddonModule,
   CommentsModule,
   TaskModule,
