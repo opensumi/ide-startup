@@ -27,10 +27,10 @@ renderApp({
   useCdnIcon: false,
   useExperimentalShadowDom: false,
   defaultPreferences: {
-  },
-  defaultPanels: {
     'general.theme': 'opensumi-dark',
     'general.icon': 'vscode-icons',
+  },
+  defaultPanels: {
     'bottom': '@opensumi/ide-terminal-next',
     'right': '',
   },

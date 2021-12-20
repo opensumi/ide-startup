@@ -2,6 +2,7 @@ node_modules/
 lib/
 dist/
 dist-node/
+hosted/
 *.error.log
 yarn.log
 workspace/
