@@ -29,7 +29,7 @@ renderApp({
   defaultPreferences: {
   },
   defaultPanels: {
-    'general.theme': 'ide-dark',
+    'general.theme': 'opensumi-dark',
     'general.icon': 'vscode-icons',
     'bottom': '@opensumi/ide-terminal-next',
     'right': '',
