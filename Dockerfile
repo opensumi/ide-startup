@@ -33,6 +33,7 @@ RUN yarn --registry https://registry.npm.taobao.org
 
 COPY --from=builder dist dist
 COPY --from=builder dist-node dist-node
+COPY --from=builder hosted hosted
 COPY --from=builder extensions /root/.sumi/extensions
 
 EXPOSE 8000
