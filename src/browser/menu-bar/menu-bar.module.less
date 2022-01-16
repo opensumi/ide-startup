@@ -1,0 +1,22 @@
+.menu_bar_view {
+  display: flex;
+  background-color: var(--kt-menubar-background);
+  height: var(--tabBar-height);
+  align-items: center;
+
+  .menu_bar_logo {
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    background-image: url(./logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: 10px;
+  }
+
+  // Override the default menu bar style.
+  > div {
+    height: var(--tabBar-height);
+  }
+}

@@ -1,13 +1,14 @@
 import '@opensumi/ide-i18n/lib/browser';
 import { defaultConfig } from '@opensumi/ide-main-layout/lib/browser/default-config';
-import { renderApp } from './render-app';
-import { CommonBrowserModules } from '../../src/browser/common-modules';
-
-import '@opensumi/ide-core-browser/lib/style/index.less';
-import '@opensumi/ide-core-browser/lib/style/icon.less';
 import { ExpressFileServerModule } from '@opensumi/ide-express-file-server/lib/browser';
 import { SlotLocation } from '@opensumi/ide-core-browser';
+import '@opensumi/ide-core-browser/lib/style/index.less';
+import '@opensumi/ide-core-browser/lib/style/icon.less';
 
+import { renderApp } from './render-app';
+import { CommonBrowserModules } from '../../src/browser/common-modules';
+import { layoutConfig } from './layout-config';
+import './main.less';
 import './styles.less';
 
 renderApp({
@@ -15,15 +16,7 @@ renderApp({
     ...CommonBrowserModules,
     ExpressFileServerModule,
   ],
-  layoutConfig: {
-    ...defaultConfig,
-    ...{[SlotLocation.top]: {
-      modules: ['@opensumi/ide-menu-bar', 'toolbar'],
-    }},
-    ...{[SlotLocation.action]: {
-      modules: ['@opensumi/ide-toolbar-action'],
-  }},
-  },
+  layoutConfig,
   useCdnIcon: false,
   useExperimentalShadowDom: false,
   defaultPreferences: {
