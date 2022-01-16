@@ -4,8 +4,8 @@ import { MenuBar } from '@opensumi/ide-menu-bar/lib/browser/menu-bar.view';
 import * as styles from './menu-bar.module.less';
 
 /**
- * Custom custom menu bar component.
- * Add a custol logo in here, and keep
+ * Custom menu bar component.
+ * Add a logo in here, and keep
  * optnsumi's original menubar.
  */
 export const MenuBarView = () => (
