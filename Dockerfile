@@ -11,7 +11,7 @@ ENV ELECTRON_MIRROR http://npm.taobao.org/mirrors/electron/
 RUN mkdir -p ${WORKSPACE_DIR}  &&\
     mkdir -p ${EXTENSION_DIR}
 
-RUN yarn --registry https://registry.npm.taobao.org --ignore-scripts && \
+RUN yarn --ignore-scripts && \
     yarn run build && \
     yarn run download:extensions
 
