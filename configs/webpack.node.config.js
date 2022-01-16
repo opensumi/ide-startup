@@ -51,7 +51,7 @@ module.exports = {
           'spdlog',
           'vm2',
           'canvas',
-          'vscode-ripgrep',
+          '@opensumi/vscode-ripgrep',
           'vertx',
           'keytar',
         ].indexOf(request) !== -1

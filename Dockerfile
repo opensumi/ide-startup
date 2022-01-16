@@ -29,7 +29,7 @@ WORKDIR /release
 
 COPY ./configs/docker/productionDependencies.json package.json
 
-RUN yarn --registry https://registry.npm.taobao.org
+RUN yarn
 
 COPY --from=builder dist dist
 COPY --from=builder dist-node dist-node
