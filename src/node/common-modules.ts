@@ -1,9 +1,8 @@
 import { NodeModule, ConstructorOf } from '@opensumi/ide-core-node';
 import { ServerCommonModule } from '@opensumi/ide-core-node';
 import { FileServiceModule } from '@opensumi/ide-file-service/lib/node';
-
+import { OpenerModule } from '@opensumi/ide-remote-opener/lib/node';
 import { ProcessModule } from '@opensumi/ide-process';
-
 import { FileSearchModule } from '@opensumi/ide-file-search';
 import { SearchModule } from '@opensumi/ide-search';
 import { TerminalNodePtyModule } from '@opensumi/ide-terminal-next/lib/node';
@@ -21,10 +20,9 @@ export const CommonNodeModules: ConstructorOf<NodeModule>[] = [
   FileSearchModule,
   SearchModule,
   TerminalNodePtyModule,
-
   ExtensionModule,
   OpenVsxExtensionManagerModule,
   FileSchemeNodeModule,
-
   AddonsModule,
+  OpenerModule,
 ];

@@ -6,7 +6,7 @@ import * as styles from './menu-bar.module.less';
 /**
  * Custom menu bar component.
  * Add a logo in here, and keep
- * optnsumi's original menubar.
+ * opensumi's original menubar.
  */
 export const MenuBarView = () => (
   <div className={styles.menu_bar_view}>
