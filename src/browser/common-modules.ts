@@ -12,7 +12,7 @@ import { SearchModule } from '@opensumi/ide-search/lib/browser';
 import { FileSchemeModule } from '@opensumi/ide-file-scheme/lib/browser';
 import { OutputModule } from '@opensumi/ide-output/lib/browser';
 import { QuickOpenModule } from '@opensumi/ide-quick-open/lib/browser';
-import { BrowserModule, ConstructorOf } from '@opensumi/ide-core-browser';
+import { BrowserModule, ClientCommonModule, ConstructorOf } from '@opensumi/ide-core-browser';
 import { ThemeModule } from '@opensumi/ide-theme/lib/browser';
 import { OpenedEditorModule } from '@opensumi/ide-opened-editor/lib/browser';
 import { RemoteOpenerModule } from '@opensumi/ide-remote-opener/lib/browser';
@@ -40,8 +40,6 @@ import { CommentsModule } from '@opensumi/ide-comments/lib/browser';
 import { ClientAddonModule } from '@opensumi/ide-addons/lib/browser';
 import { TaskModule } from '@opensumi/ide-task/lib/browser';
 import { TestingModule } from '@opensumi/ide-testing/lib/browser';
-
-import { ClientCommonModule } from './client-common.modules';
 
 export const CommonBrowserModules: ConstructorOf<BrowserModule>[] = [
   MainLayoutModule,
