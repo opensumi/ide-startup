@@ -1,7 +1,6 @@
 import { Injector } from '@opensumi/di';
 import { ClientApp, IClientAppOpts } from '@opensumi/ide-core-browser';
 import { ToolbarActionBasedLayout } from '@opensumi/ide-core-browser/lib/components';
-import { RemoteOpenerConverterContribution } from '@opensumi/ide-core-browser/lib/remote-opener';
 import { MenuBarContribution } from './menu-bar/menu-bar.contribution';
 import { StatusBarContribution } from './status-bar/status-bar.contribution';
 
@@ -9,7 +8,6 @@ export async function renderApp(opts: IClientAppOpts) {
   const injector = new Injector();
   injector.addProviders(StatusBarContribution);
   injector.addProviders(MenuBarContribution);
-  // injector.addProviders(RemoteOpenerConverterContribution);
 
   const hostname = window.location.hostname;
   const query = new URLSearchParams(window.location.search);
