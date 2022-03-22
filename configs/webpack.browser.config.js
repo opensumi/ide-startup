@@ -162,8 +162,7 @@ module.exports = {
   devServer: {
     contentBase: distDir,
     port,
-    host: '127.0.0.1',
-
+    host: '0.0.0.0',
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
