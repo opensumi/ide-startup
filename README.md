@@ -28,9 +28,9 @@ $ mkdir workspace   # 创建默认的 workspace 目录，启动后会默认打�
 $ yarn start        # 启动前端、后端服务器及 Webview Host
 ```
 
-浏览器打开 `http://127.0.0.1:8080`
+浏览器打开 `http://0.0.0.0:8080`
 
-URL 添加 query 参数 `workspaceDir` 即可打开指定目录，例如 `http://127.0.0.1:8080?workspaceDir=/path/to/dir`
+URL 添加 query 参数 `workspaceDir` 即可打开指定目录，例如 `http://0.0.0.0:8080?workspaceDir=/path/to/dir`
 
 ![OpenSumi](./snapshots/sumi-startup.png)
 
@@ -44,4 +44,4 @@ docker pull ghcr.io/opensumi/opensumi-web:latest
 docker run --rm -d  -p 8080:8000/tcp ghcr.io/opensumi/opensumi-web:latest
 ```
 
-浏览器打开 `http://127.0.0.1:8080`
+浏览器打开 `http://0.0.0.0:8080`

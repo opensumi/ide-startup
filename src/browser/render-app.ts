@@ -22,7 +22,7 @@ export async function renderApp(opts: IClientAppOpts) {
   opts.extWorkerHost = opts.extWorkerHost || process.env.EXTENSION_WORKER_HOST || `http://${hostname}:${staticServerPort}/worker-host.js`;
   opts.staticServicePath = `http://${hostname}:${serverPort}`;
   const anotherHostName = process.env.WEBVIEW_HOST || hostname;
-  opts.webviewEndpoint = `http://${anotherHostName}:9090`;
+  opts.webviewEndpoint = `http://${anotherHostName}:8899`;
   opts.layoutComponent = ToolbarActionBasedLayout;
   const app = new ClientApp(opts);
 
