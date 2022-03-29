@@ -3,6 +3,14 @@
   "extensions": {
     "vscode": [
       {
+        "name": "node-debug",
+        "version": "1.41.1"
+      },
+      {
+        "name": "node-debug2",
+        "version": "1.42.4"
+      },
+      {
         "name": "typescript-language-features",
         "version": "1.60.0"
       },
@@ -84,7 +92,7 @@
       },
       {
         "name": "git",
-        "version": "1.55.2"
+        "version": "1.44.2"
       },
       {
         "name": "html",
