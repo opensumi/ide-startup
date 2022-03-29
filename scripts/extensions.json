@@ -67,6 +67,10 @@
         "version": "1.55.2"
       },
       {
+        "name": "git-base",
+        "version": "1.64.0-next.68976705968"
+      },
+      {
         "name": "go",
         "version": "1.55.2"
       },
@@ -92,7 +96,7 @@
       },
       {
         "name": "git",
-        "version": "1.44.2"
+        "version": "1.55.2"
       },
       {
         "name": "html",
