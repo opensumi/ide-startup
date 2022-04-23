@@ -11,7 +11,7 @@ ENV ELECTRON_MIRROR http://npm.taobao.org/mirrors/electron/
 RUN mkdir -p ${WORKSPACE_DIR}  &&\
     mkdir -p ${EXTENSION_DIR}
 
-RUN yarn --ignore-scripts && \
+RUN yarn --ignore-scripts --network-timeout 1000000&& \
     yarn run build && \
     yarn run download:extensions && \
     rm -rf ./node_modules
