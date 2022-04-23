@@ -13,7 +13,8 @@ RUN mkdir -p ${WORKSPACE_DIR}  &&\
 
 RUN yarn --ignore-scripts && \
     yarn run build && \
-    yarn run download:extensions
+    yarn run download:extensions && \
+    rm -rf ./node_modules
 
 FROM node:14 as app
 

@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "npm run compile:worker-host && npm run compile:ext-host",
     "download:extensions": "node scripts/download.js",
-    "compile:browser": "cross-env NODE_ENV=production webpack --config ./configs/webpack.browser.config.js",
+    "compile:browser": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=4096 webpack --config ./configs/webpack.browser.config.js",
     "compile:node": "webpack --config ./configs/webpack.node.config.js",
     "compile:worker-host": "cross-env NODE_ENV=production webpack --config ./configs/webpack.worker-host.config.js",
     "compile:ext-host": "cross-env NODE_ENV=production webpack --config ./configs/webpack.ext-host.config.js",
