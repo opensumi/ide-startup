@@ -14,7 +14,7 @@
     "compile:node": "webpack --config ./configs/webpack.node.config.js",
     "compile:worker-host": "cross-env NODE_ENV=production webpack --config ./configs/webpack.worker-host.config.js",
     "compile:ext-host": "cross-env NODE_ENV=production webpack --config ./configs/webpack.ext-host.config.js",
-    "build": "cross-env NODE_ENV=production NODE_OPTIONS=--mxa-old-space-size=4096 npm run compile:browser && npm run compile:node && npm run compile:worker-host && npm run compile:ext-host",
+    "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=5120 npm run compile:browser",
     "start": "run-p start:client start:server start:webview",
     "start:client": "cross-env NODE_ENV=development webpack-dev-server --config ./configs/webpack.browser.config.js --progress --color --watch",
     "start:webview": "webpack-dev-server --config ./configs/webpack.webview.config.js",
