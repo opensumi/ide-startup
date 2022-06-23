@@ -21,7 +21,8 @@
     "start:server": "cross-env EXT_MODE=js KTLOG_SHOW_DEBUG=1 node --inspect=9991 -r ts-node/register -r tsconfig-paths/register ./src/node/index.ts"
   },
   "resolutions": {
-    "vscode-languageserver-protocol": "3.16.0"
+    "vscode-languageserver-protocol": "3.16.0",
+    "yargs": "13.3.2"
   },
   "dependencies": {
     "@opensumi/ide-addons": "2.18.6",
