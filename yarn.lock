@@ -72,30 +72,30 @@
   dependencies:
     reflect-metadata "^0.1.13"
 
-"@opensumi/ide-addons@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-addons/-/ide-addons-2.18.5.tgz#e72a5250ecfe20f7d622a7c351877562e7903362"
-  integrity sha512-c6s4A6bjP2BLIPsPzIK9wIpg30/ettaszF0nLWh3pITI1QQVFm1ozYjq11P4eqlg/70ExwFifCsnpjlqIl784w==
+"@opensumi/ide-addons@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-addons/-/ide-addons-2.18.6.tgz#200fa92aeaee88b395c0d7b7104ef8cb95f689eb"
+  integrity sha512-HocZJA9ZtLZpquioJoObxzYb+P+87k3jL/6ATMBL8e894pAZm5N8rLcp9JajPrTB5zYnPOANYwTAs7O0WbvfsQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
 
-"@opensumi/ide-comments@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-comments/-/ide-comments-2.18.5.tgz#da5ed71e96594528e7010e421baec13dc07c0737"
-  integrity sha512-8sOVlhek01j7gwFzJ/AjNd3qrwdhUDBTjsOEhLkjAbvGTafR99zgALJWMJ8yqEVmI3FqxW/QyCKHUPOTW1L5og==
+"@opensumi/ide-comments@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-comments/-/ide-comments-2.18.6.tgz#9def6c9e2a6e68d54b0876c6ab2f8914b4f4464b"
+  integrity sha512-riG2lEOyP8aqvS36Q+Rs40cJ4UBZws+cC7UgC3L/ye+/YHDARJjB4y0lhgkvA3u1/vL7M7uYEMueXRqvw7iRXw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
     marked "4.0.10"
     react-mentions "^3.3.1"
 
-"@opensumi/ide-components@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-components/-/ide-components-2.18.5.tgz#25e32ac740cc72b1abb554c3d2d9b6a40a8f0b5c"
-  integrity sha512-Y3YG83yL8CZ9jO+f77sVp+a0wczpB9bNs5IMagoRPQyhQVg/D4G7yP1IjEOQknaSknhSnb0AWxp59h0LhyUimg==
+"@opensumi/ide-components@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-components/-/ide-components-2.18.6.tgz#5f12db8e51874b52dad87191114db7022f76b650"
+  integrity sha512-pYsfHlRHEkxb0v4RalRjfX7I/CgksQk5No3WJNjBSQ+uFUlbAms0EeLL/wq88QvvI0pcKnpsU8Qycu52NkwYBw==
   dependencies:
     "@ant-design/icons" "^4.6.4"
-    "@opensumi/ide-utils" "2.18.5"
+    "@opensumi/ide-utils" "2.18.6"
     "@types/react-window" "^1.8.5"
     fuzzy "^0.1.3"
     lodash "^4.17.15"
@@ -111,24 +111,24 @@
     react-virtualized-auto-sizer "^1.0.2"
     react-window "^1.8.5"
 
-"@opensumi/ide-connection@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-connection/-/ide-connection-2.18.5.tgz#88e10d66dc12ccdf67c8c48576e2b473ebfcee13"
-  integrity sha512-ssV4xPg/gLvFHASSIK2HJNF8SnBvqBPaJ1YltTXw/tIOIYEUcm9HhaWlxpLMc0tCeqow2wP0SBRCWk/vEVQgLQ==
+"@opensumi/ide-connection@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-connection/-/ide-connection-2.18.6.tgz#79fe7fd68a28d6de35b9ca31896e1cafc9de8b0d"
+  integrity sha512-zad0tvguKeZ5We6NVmJ8rPKLhoRpV7iqwu7AnTfKYG19cswVfM2Q+6xS9nNRYNXnM08HXrk/9/Y/9KfqDCNhXg==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
     "@opensumi/vscode-jsonrpc" "^8.0.0-next.2"
     path-match "^1.2.4"
     ws "^7.2.0"
 
-"@opensumi/ide-core-browser@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-core-browser/-/ide-core-browser-2.18.5.tgz#6f3003a05b0c3811516fc72e41abd817bc36969c"
-  integrity sha512-p/H324mLcViivninL0Rqix1ehXUn0as5hTpVl1D62tW7HqdR4HWUTmkV1dcZJvo1AYFy6EHcsrTaSJEmvpCLdQ==
+"@opensumi/ide-core-browser@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-core-browser/-/ide-core-browser-2.18.6.tgz#0c1f8449415bbbe197f5997fc03e31cb5dc69318"
+  integrity sha512-I85rRNqH9/sT0stS6dLyZIMzyJcf5SCwVslJ2tLkii+u0CCsV1Vy6MVRFZWzBb6eKws6VvQ8ZxwDtqfnK4StqQ==
   dependencies:
-    "@opensumi/ide-components" "2.18.5"
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-components" "2.18.6"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
     "@opensumi/vscode-debugprotocol" "1.49.0-beta.1"
     "@vscode/codicons" "0.0.27"
     ajv "^6.10.0"
@@ -160,114 +160,114 @@
     vscode-languageserver-protocol "3.16.0"
     vscode-textmate "5.4.0"
 
-"@opensumi/ide-core-common@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-core-common/-/ide-core-common-2.18.5.tgz#4eb96dfedecf69cacbca501f5ecbf4712dea7973"
-  integrity sha512-MSFGC2fWbJW3Pwepprwiw+QPmPn+uKnGN8Lm63Ja0XSeBZdeSiI07hNdcpt+qkZWNjx4NMulEe3fZ05wuEp2fw==
+"@opensumi/ide-core-common@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-core-common/-/ide-core-common-2.18.6.tgz#d02c097bc196d66455cb9cde9d70104b6a7aa618"
+  integrity sha512-XIyihj4FWhfFAPiNwMpYBHJDzEWftu0pKZ1TJgTp+yDkCiL42YppcdFzinTFk5YIKvZmyLkvbkBhnHNwRg1mKw==
   dependencies:
     "@opensumi/di" "^1.1.0"
-    "@opensumi/ide-utils" "2.18.5"
+    "@opensumi/ide-utils" "2.18.6"
     jschardet "3.0.0"
 
-"@opensumi/ide-core-node@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-core-node/-/ide-core-node-2.18.5.tgz#80b55ce08ae9dfef7b7114eb95e249ed25c60e71"
-  integrity sha512-fZzmXTp4OWVaSTNw8DgyIGmddAL/tr/74EgQBXCv/VFVHPUGIXaxaI8+wZNJarQrugzZjxKC9VC1vWCmaMbbfg==
+"@opensumi/ide-core-node@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-core-node/-/ide-core-node-2.18.6.tgz#3101dd7653a4cfe7c01480dab11ad35a49388a4a"
+  integrity sha512-POsjQESumgR2+gC1t9W8iaaF4BXzcuDhHJTSPzlLMK5JfTX2VGCkIuTxBoMGRmeldgua4+LDpC6O/GY9wQ1ojA==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
     keytar "^7.7.0"
 
-"@opensumi/ide-debug@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-debug/-/ide-debug-2.18.5.tgz#34f6b70718b32479eaa4b1128599535a93d5307a"
-  integrity sha512-aTkdbnlYS/Q9dcqmua1qkdM82cwXOrR5b6FgLw1G0MTnGduLgjcAXBrvfnszFTbyFVen6QrvD+VjQ2ZEQev/BA==
+"@opensumi/ide-debug@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-debug/-/ide-debug-2.18.6.tgz#8fdc12e23f784efe4fa4e1ab8d7e9b2901eb107c"
+  integrity sha512-qYfgf8ynLQIBBupNlXrkh1By/hSMvJr27ExK0kd/tUbWA3Sp3lOM3k2OGbDUD2ezK/dFX0JLHFzsZUKkD7GZsA==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
-    "@opensumi/ide-task" "2.18.5"
-    "@opensumi/ide-terminal-next" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
+    "@opensumi/ide-task" "2.18.6"
+    "@opensumi/ide-terminal-next" "2.18.6"
     anser "^1.4.9"
     btoa "^1.2.1"
 
-"@opensumi/ide-decoration@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-decoration/-/ide-decoration-2.18.5.tgz#a4838bb87e08cfa0aaa97cdf5cf71c9c0612b8c9"
-  integrity sha512-5FKj6wA+6oD34UbbdHJKnQtuh7Zwigo7pqDG6GLy+uKaRviigTMqJCjRo2QJWSJTknVfmJMAR+goXSPscL5m3A==
+"@opensumi/ide-decoration@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-decoration/-/ide-decoration-2.18.6.tgz#589e1d881072ef1d779e0972da1bcf43dbe13309"
+  integrity sha512-DZtDKuVmcNwjhqb9ngU1V+7t/7FPhIHiLQIHFaIz98+2YC3CfmnTixBDms4Olp9k5gNy1WXwZG8UhUtOsuOt8A==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
 
-"@opensumi/ide-editor@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-editor/-/ide-editor-2.18.5.tgz#7c66f1d0b571200660e32cf2be351c166ddc7a9f"
-  integrity sha512-ZfSGlfuusbG6yhoucftlWA5kdmm2KGIJW2mibOnGbxO838DyAT9xvqFIjMkBJ4q0H/UekNG9YxgufmMsOzsjEA==
+"@opensumi/ide-editor@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-editor/-/ide-editor-2.18.6.tgz#b087576feae06e3346c21007d0c33532306e2687"
+  integrity sha512-TuExKOR0fCkKW7edYFNbGY5QTRr3ZtCNLMJ4u0XvEhRwpP2o5xledwKcem5LkY4op41RgS8qkyDWHEZtfyXsNg==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
-    "@opensumi/ide-monaco" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
+    "@opensumi/ide-monaco" "2.18.6"
     vscode-oniguruma "1.5.1"
 
-"@opensumi/ide-explorer@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-explorer/-/ide-explorer-2.18.5.tgz#3b02d84df1a75e174cc492e9d728ae678d26e10f"
-  integrity sha512-rMojJiprNvPOXI4hgQVHfcHN54y4fnY2XzLzWdCHADgQsmDkfB1ZW2GpowDiHaU5ZHIbGlrIL3TAFCkALo8Rpw==
+"@opensumi/ide-explorer@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-explorer/-/ide-explorer-2.18.6.tgz#12185aecf0f4b7431692ddee2ca4a387f2cc741d"
+  integrity sha512-SvFhcMurNxlXQID6Zi9KNBvRshh63RNE6uK08DpwsuIZJ9LXqkn8BU89t0bNPsCUfkvgalwuuKmObSRoafKCqQ==
   dependencies:
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-core-node" "2.18.6"
 
-"@opensumi/ide-express-file-server@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-express-file-server/-/ide-express-file-server-2.18.5.tgz#a4fb35f8f48b6526a1ff1e7a89f3dbd248f98ba7"
-  integrity sha512-1rrPlCxPppbokF1qH5XYJzmLfocs1/keeELJai1C9hu1xe3NzGiWy9ngKKMNGfqDoXCf8k4kDQABzXxKTefgaQ==
+"@opensumi/ide-express-file-server@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-express-file-server/-/ide-express-file-server-2.18.6.tgz#e9f0f590f59cbf757927b3c205a8e7cedfb5cdb9"
+  integrity sha512-acptHjuu6UKwHq4Vhby7DkQFuTiTAenmc+OWJKxXvgGrz4HvugDKKYR7M3+xy6IUAfMk8mSmonVn1qqVaDHj9A==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-static-resource" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-static-resource" "2.18.6"
     koa-mount "^4.0.0"
 
-"@opensumi/ide-extension-manager@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-extension-manager/-/ide-extension-manager-2.18.5.tgz#137e2b3a22fcc9a7e9d53dd424cc7a7b3e3000ba"
-  integrity sha512-I/BeXx28F95vUTPSleNlOGaGyk3y5/YDb8NF+QunKZfq5ai9DIxcPzaG/JnvOV8tcOU1qA9+aUzSZpgjgxTMxQ==
+"@opensumi/ide-extension-manager@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-extension-manager/-/ide-extension-manager-2.18.6.tgz#cb48f68e8ea585948cd0fe5b571da50ec9810fe3"
+  integrity sha512-exlgAjpzg444VEsYP/FBYaWVB5hUkGjbcWlsjN51p823FA1y6mq/m+XjkMIUJzd8Q43qdbArw38BdI0nH1Lbxw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-extension" "2.18.5"
-    "@opensumi/ide-static-resource" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-extension" "2.18.6"
+    "@opensumi/ide-static-resource" "2.18.6"
     fs-extra "^10.1.0"
     node-fetch "^2.6.7"
     requestretry "^7.0.0"
     yauzl "^2.10.0"
 
-"@opensumi/ide-extension-storage@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-extension-storage/-/ide-extension-storage-2.18.5.tgz#d543469be38e205556c789341e75783ce0ed286d"
-  integrity sha512-6aUEp40t0w8EG2qZJ+dAnj1//aQY83ArSYAoyfoIUumSiFjmot+tbNHT+1rC3jjR5sxgROIFPHOQObrKNMj9jQ==
+"@opensumi/ide-extension-storage@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-extension-storage/-/ide-extension-storage-2.18.6.tgz#803651e155774fcd47375786d5504985bc602c09"
+  integrity sha512-l0+zcFO3BQK9+DDkyn+3gIGotG46UW/cXhy6b/iWtBALoSgfQYw0CdPc73bXAwVxJxVqpMSv7HtHQYr91YC19g==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
-    "@opensumi/ide-logs" "2.18.5"
-    "@opensumi/ide-workspace" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
+    "@opensumi/ide-logs" "2.18.6"
+    "@opensumi/ide-workspace" "2.18.6"
 
-"@opensumi/ide-extension@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-extension/-/ide-extension-2.18.5.tgz#d09e2a4d186c405962f5571941a5f9902a630b95"
-  integrity sha512-SzHL3sgVtUYez9JMqcf1jBoszlnLdHp+V/FMkON1XpviWfTQJdb4JVdjPYFMmunXu3+2YLnkjqWgqw+dPdvEiQ==
+"@opensumi/ide-extension@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-extension/-/ide-extension-2.18.6.tgz#c6fc0f3465aa8e5a51213a711a5108810e4fdcce"
+  integrity sha512-ork6o6PiaYs1YL6E7ez1/TXnGRHcKR7C3GiVLmkSfnP+96IHx+8OKKIiXWL4TbMU6nBDYzqq+UTxFOIaI7yM5w==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-debug" "2.18.5"
-    "@opensumi/ide-file-search" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
-    "@opensumi/ide-logs" "2.18.5"
-    "@opensumi/ide-static-resource" "2.18.5"
-    "@opensumi/ide-task" "2.18.5"
-    "@opensumi/ide-terminal-next" "2.18.5"
-    "@opensumi/ide-webview" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-debug" "2.18.6"
+    "@opensumi/ide-file-search" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
+    "@opensumi/ide-logs" "2.18.6"
+    "@opensumi/ide-static-resource" "2.18.6"
+    "@opensumi/ide-task" "2.18.6"
+    "@opensumi/ide-terminal-next" "2.18.6"
+    "@opensumi/ide-webview" "2.18.6"
     "@opensumi/vscode-jsonrpc" "^8.0.0-next.2"
     address "^1.1.2"
     glob-to-regexp "0.4.1"
@@ -277,35 +277,35 @@
     v8-inspect-profiler "^0.0.20"
     yargs "^17.5.0"
 
-"@opensumi/ide-file-scheme@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-scheme/-/ide-file-scheme-2.18.5.tgz#647ffedac6a5c0f805d907610fe05677dc999de5"
-  integrity sha512-8BPG8a1/USQjVIUT6ViVcSIMPtFn8CUH/NRsk6Nnb2p78tt9XXUalf+jwWpRqy62+8quidxFRrD9c1WhiA/8cQ==
+"@opensumi/ide-file-scheme@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-scheme/-/ide-file-scheme-2.18.6.tgz#0441cae6a48b91a9c493da713c656ae7a7009029"
+  integrity sha512-5AHNDGQSUF3RE65UAToUrpCvlYbf46R16RLQzGtYSWXKvZp3kw33a6MgQcOQ8xuX9srkuAWOJXEbOWAGRb/SzA==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
-    "@opensumi/ide-static-resource" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
+    "@opensumi/ide-static-resource" "2.18.6"
 
-"@opensumi/ide-file-search@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-search/-/ide-file-search-2.18.5.tgz#b15947fb70ebeac07f62dacf69a8e8cf5496cd69"
-  integrity sha512-k+EporjrRRZ4XEBn3cDYVbAvf37kjX6Z/0va3Kt0Ijl5uqunqD7+/DCOHZ7zzauXyU/a0T37N87t/ZTquPBtoQ==
+"@opensumi/ide-file-search@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-search/-/ide-file-search-2.18.6.tgz#bf9f9367b6e5f5c6038ddb45bc0c43cd0dad4f27"
+  integrity sha512-cCwE1la8MuFN/EEDOIzRxFGy+x60Ku+JEDM8V0fnoGYMthxrayYUBGzFlac5YMwQ/K9QHcbuEHvrY13bpXwABQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-process" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-process" "2.18.6"
     "@opensumi/vscode-ripgrep" "^1.4.0"
     fuzzy "^0.1.3"
 
-"@opensumi/ide-file-service@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-service/-/ide-file-service-2.18.5.tgz#3146ab667c697f1e591ac18d3187414359c5f073"
-  integrity sha512-g1uWi0qRV0cFS4V743zqZATRwY0GV0D5oyfEjgRVg//ujB/DoG7ZqW9GN6066/h6Z5r5BJ1o6I0k6G13si2YIw==
+"@opensumi/ide-file-service@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-service/-/ide-file-service-2.18.6.tgz#d6bb4bb75141fc490e5f159fc6a42631ef8f28d7"
+  integrity sha512-/e+0ep00hvp/Y2L1v6W4fDbPIMitLIIyhtMS6SvHJK/16b4Cvw/p364U0feDOrs7BXA+HKdGmJ1PShsGO44rdg==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
     drivelist "^6.4.3"
     file-type "^12.0.0"
     iconv-lite "^0.6.3"
@@ -315,256 +315,256 @@
     vscode-languageserver-types "^3.16.0"
     write-file-atomic "^3.0.0"
 
-"@opensumi/ide-file-tree-next@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-tree-next/-/ide-file-tree-next-2.18.5.tgz#467dfcb39b529ab77cb05040ca26c1f92a95433f"
-  integrity sha512-A6fTos2hN96hkpXcf+fSKpeOC+xAtOPsAqColWfdX9mc7KoDiv+TjT+g+dUcEr9vke+FLW3s/QxSVxntod/nSw==
+"@opensumi/ide-file-tree-next@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-file-tree-next/-/ide-file-tree-next-2.18.6.tgz#e88b3939373086038e066529f69ad36b50f2635b"
+  integrity sha512-7nYokuhCSa4wG+RRy+asFQMf8kUkcDNVxViipTfLW+x+uOSvyxU3Us/bLWNrpSqTEYEekdoPwKnSKH4Mie+iOg==
   dependencies:
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
 
-"@opensumi/ide-i18n@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-i18n/-/ide-i18n-2.18.5.tgz#14b9501b850432458d5b90a812b46ca6a985ee78"
-  integrity sha512-7SOtafxdqqcZko2nB8arv1t0LYVE1QckGxO+YtVnIdMMEEuHXoAGh8fDWHMCRoAx4v7vKBQLxcOruFGxCtTAIA==
+"@opensumi/ide-i18n@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-i18n/-/ide-i18n-2.18.6.tgz#770ad8057fe0d9db4c1a8a3a9514ee8e6023caec"
+  integrity sha512-iYof/lLvHl6Zy6aKKZde5K4e20BPL85CyJhTk6q9+EJ8uO64tv8oeOAwGAP71RulwtN1JXESCIw9zBhOkj0V8g==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-keymaps@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-keymaps/-/ide-keymaps-2.18.5.tgz#4a567cbf44fd6794d0209759ced93863728fd2c4"
-  integrity sha512-vn9wfYB1ido139qLQQJ6B/aDQFmagby+49bb0fmrq6d3uTUpxDERvOsey2HgQqN1qxX+EHGWKmeL6Ctn2ALzaw==
+"@opensumi/ide-keymaps@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-keymaps/-/ide-keymaps-2.18.6.tgz#bd2f209ce39a047e64a49e0925a10fdc9f56699d"
+  integrity sha512-ZZPyQhwIFcfBNm1y/jxy6499NCcL9gC4CZZuerU3iNEuA8JDfIHUlt97t0UVF3+W2u+GfzmxxcP8b3KMUKJrbQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-logs@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-logs/-/ide-logs-2.18.5.tgz#b93c9cde56f859761260ccf1ffb82657b07fae6a"
-  integrity sha512-r/Gah0Ws5BPLAUzKn8YJ2uMLcGBdHrJq6WGHJngznTu99SsE9LjWxufeYCHGn1cpwFVPlGkZd10k0Kp6sHHCTQ==
+"@opensumi/ide-logs@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-logs/-/ide-logs-2.18.6.tgz#54e28c8d24cfe6b7c7e81aab656167c6eae25063"
+  integrity sha512-4OzEdxIa+L6ESSf7XDwrdj1j9GNnSl+x2iTYh5IaQs0BGZ74MD21NCxyTEABGvAd7dHL3pijTyyGOt62aoUWRw==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
     archiver "^3.1.1"
     spdlog "^0.9.0"
 
-"@opensumi/ide-main-layout@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-main-layout/-/ide-main-layout-2.18.5.tgz#486b058ee15fcf2468102724fe421aeddac62c34"
-  integrity sha512-Uy8921KzOb+j5nUWmtl7LRcdZMSyWg4fie5q5qN6TTo4VcPPxZdSjm/MrFNevgsScy7KYO9mfoaajD8FvV4NMA==
+"@opensumi/ide-main-layout@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-main-layout/-/ide-main-layout-2.18.6.tgz#20b90321945c6e2f285de9c4103da5832a16f008"
+  integrity sha512-zFHqAMWFuujMAPCFnEDEX7x8ftUtej0ZQbEvQeZcn5PiMxYcd7s0ifTUfSSS5cHCFuTYXFacPkGOVa50KI5mAA==
   dependencies:
-    "@opensumi/ide-components" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-components" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-markdown@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-markdown/-/ide-markdown-2.18.5.tgz#ad7ef8e5b277b062e79332045aa74ec67dd58149"
-  integrity sha512-mjYoZSthiomMYTgiUrg9GNGckvLhIIZOx/DGICmZLimTCiQPSsBOnCaHXjyAzZzYnTQrg0kvm6x04vN8NwRjjA==
+"@opensumi/ide-markdown@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-markdown/-/ide-markdown-2.18.6.tgz#bf2746b8530e7fd4dd7143108134673241743655"
+  integrity sha512-N+lhqQMF+cyUzv9ZD2g6RbCToxNm6n5sfbGinDnGLwaZjHLoz6pJ448wsmrLTrABi+B/+YBQaNLzJf1PF6huNQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
     marked "4.0.10"
 
-"@opensumi/ide-markers@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-markers/-/ide-markers-2.18.5.tgz#348e9f47b281b597938701d26dbc95a9b5057dec"
-  integrity sha512-J6YH7o2i4ZZ7+vWN+ESLwd2+/YoEseiC7sHSctk3cz4lGmu5bDfmT/L/HnKbiaQMtXe6/JLS4kh9ADzUMpZw5Q==
+"@opensumi/ide-markers@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-markers/-/ide-markers-2.18.6.tgz#4ff9e6b3e45707d619a61cd8c0f3c25d67712d0c"
+  integrity sha512-OMvaQZylO5codTh0EWBFsL01cAz/Af6xeoNBr+zXXULWxv4Yd0pbK2WpllmyN40z2vbr0Sp/0YfUOfSv82BnNw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-menu-bar@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-menu-bar/-/ide-menu-bar-2.18.5.tgz#d3f1819fd1d53fd802b4b15c3b17b5614a5e4a5c"
-  integrity sha512-Rt9B9lfnOFcfPexN4rPXGZB3aFuhk2iL7bw2Qc17WyXwwNT17Qic+kOpTL8qVJMroNiHsgyMEVRSVLdS9luYvw==
+"@opensumi/ide-menu-bar@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-menu-bar/-/ide-menu-bar-2.18.6.tgz#0bfe05a38007a5597100daac364d23389c2f0044"
+  integrity sha512-mCWcbCL/ejUbsZYsAyPpMh+5EY2eOnYw2wkmWpSbQCwNpitWF5dR5npY2ucn7OwaN9SY/J0N8XnIjQZE2SPVkw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-monaco-enhance@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-monaco-enhance/-/ide-monaco-enhance-2.18.5.tgz#06108ac19a761c74d22c535cfbca905b86859d59"
-  integrity sha512-lyY7rLfUl7wI+BS1VHq40xxuGm/7ULcC/TavOITvKJpr7W+RobBLa1VNG09rGbTmDx6k+Ycs1LgHa5IZEX9I2A==
+"@opensumi/ide-monaco-enhance@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-monaco-enhance/-/ide-monaco-enhance-2.18.6.tgz#0981f4d8807ec17e669ff450c50224212fb0d574"
+  integrity sha512-JK8UFDHkGjTJQr9v0PgxaFaWzeLVBDe1L4oVzas6G4HnJJDzZYtnahAMY2NtzIf9lFZNIhUmqGKSBoVwA9lF/Q==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-monaco@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-monaco/-/ide-monaco-2.18.5.tgz#24a2f3b3901f2723ecf42e4e6f63742b58dc4e51"
-  integrity sha512-BQpjJSNVeO3sgmNOGVVAptSR/3g5pu/BfKG/kKE67120+tgECIss9YGt079OdVw2OoSSKeF9V6EcROnBs1xYMA==
+"@opensumi/ide-monaco@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-monaco/-/ide-monaco-2.18.6.tgz#a1d249452490be5715b4c7af7ed9e040bbf6bc88"
+  integrity sha512-AVLHPQ1wKKJXMuMBSHojKhPQSIH1jdfwZYWZJeCbhq+6gky6nFFNbB75xsuggdBlnZiX/45JAW5GAcFL2gvQXg==
   dependencies:
-    "@opensumi/ide-core-browser" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-browser" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
     "@opensumi/monaco-editor-core" "0.29.1-patch.1"
 
-"@opensumi/ide-opened-editor@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-opened-editor/-/ide-opened-editor-2.18.5.tgz#ce79de89df1091b324b9d083d5bf66758be1d8f9"
-  integrity sha512-blJ+4DHkjIONBy99olwoQpPgwS4qrOijTFBpi4ig7rN+jIRRqdRoTIWOAVeRpmq4rZiuMqbeyT36NYFGINULYA==
+"@opensumi/ide-opened-editor@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-opened-editor/-/ide-opened-editor-2.18.6.tgz#2d1fc80e49e27c58bfe85cd3e0857f7e2944a05a"
+  integrity sha512-N8VxG2l8MPW8Fn4kLYMTGWl1vL6RpK/CKgluOw1T4oehePLGPBNj2ULhYOAc7A1JTCJGDUZDh02zjfluBt4sQg==
 
-"@opensumi/ide-outline@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-outline/-/ide-outline-2.18.5.tgz#b29d2e16ee5e3e983e2bbda45489eecbf7e47b0a"
-  integrity sha512-H7ohk22SB0nRnvUtU3wSQtFJje4FFN5gdtXklVyWqGGq2aq1xMIVNh5VfY6mM+QzB4/7+RVM+BJt7YwgY7L9Zw==
+"@opensumi/ide-outline@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-outline/-/ide-outline-2.18.6.tgz#33f40a37e6e01ac011a88df79468f0d86644ef51"
+  integrity sha512-+jEchnjtdegIkIZdx4mjJRJSVgonyuUXLgpQdtPn5Zqwr28cftAT/FgLpJXkeY1hZiLRBx0Hfxyi6olU2yYr0A==
 
-"@opensumi/ide-output@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-output/-/ide-output-2.18.5.tgz#1a6c0001ed5cc6d324a8cfe5109d42728e7e2ee2"
-  integrity sha512-J9Z4UyC8nM5Ur/UDjwjqa7Esii2u5YCGTMMCKFz3eEYXkqJl9bFfjDE9q6vskCsWVgqPOREfIzIkftNiVwPrUw==
+"@opensumi/ide-output@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-output/-/ide-output-2.18.6.tgz#eae8a2f52b0fa9a33a46ef261b2f001093b09bd6"
+  integrity sha512-zaMxmX1mFFEdLSRyXNvBU00GZlk0DJ/Im6ky+wFh8LnkTRDebpvjA53hUiZ4aoNo3ffvY0Ynq2L9d0tbSLZS4Q==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
     escape-carriage "^1.3.0"
 
-"@opensumi/ide-overlay@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-overlay/-/ide-overlay-2.18.5.tgz#047c9ae773b7924e482e7323df8ac12ce41d9cfd"
-  integrity sha512-AHsXZE5FqzpDLsD3M/7MeJg/3iZeaTG0MSypUNHtfTgJHLmG39ePn/h3aahzce8g8y0iEgLUYeM1mbhEcYk+Lw==
+"@opensumi/ide-overlay@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-overlay/-/ide-overlay-2.18.6.tgz#cebbed345facb0583c7dea7718c408be0ed2b602"
+  integrity sha512-OnxjQppps8bI/Az35tVGP4Q4mn9NQWGSg7ySwpBYWumASiCkGp1+MGivj+VXG3jRLbxCHpZ+iC78sGN37J2iRg==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-preferences@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-preferences/-/ide-preferences-2.18.5.tgz#7a49872ce7f671c2e43eff7b2132ce0996eb1ad0"
-  integrity sha512-Dctxwqj2sYbpQ1zmQeuvU12yFDKwdwT4HAYrutBKeEPk6IWsmsXCmRhKsT0vzwdoEsjjJbwhdNWYZoDzr2X/vw==
+"@opensumi/ide-preferences@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-preferences/-/ide-preferences-2.18.6.tgz#309688a14cb2be43f13a43eafd51abdc5d300972"
+  integrity sha512-k+XUih/kYMcfp7YBUAZa6fv8rs2GXG2rYfhFcoyx64JN6xdbX1yn+xh2nTH6fX2CPvyIaOcz2R+RdwPRKzn+BQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-process@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-process/-/ide-process-2.18.5.tgz#d269e92408eca5d22d2ebb8780da89c859acab73"
-  integrity sha512-4teYcMQ3+FfCn4uPfITLc6HOl9LF9VHmeyJIUnus0YmoEGT7tYSZjsJRnAw0xf9AKpaDiTVLWD464SsH4Nml2Q==
+"@opensumi/ide-process@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-process/-/ide-process-2.18.6.tgz#f218cc2ad27cac47f7e014cf62b42870e02b0033"
+  integrity sha512-2rDSc7PUYr8EzX9Gcaqf+HFFAB3rldPJ7lfrmpqtnXjIaZhm4We7BxAXnSSHKcifHw1dfBWn6JZ8/vCJAEjBqw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
 
-"@opensumi/ide-quick-open@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-quick-open/-/ide-quick-open-2.18.5.tgz#6d79d43300a9aa55d0bd491fad445d2d2d8d0ad7"
-  integrity sha512-d0A2P0LMzf4YFn55yKKQpXinLC64kBS6Rd2omOB02Sk5aoc2evhkN8GmJrlo9BC+YL+pZ0RoR6SAIa56o5SiMA==
+"@opensumi/ide-quick-open@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-quick-open/-/ide-quick-open-2.18.6.tgz#666e2ceccfb9308411b3031430b0f67f4836b9cb"
+  integrity sha512-nwfDdmV9hANB7HE/4lJXNLNkjU1quBMK+aJi/GSCT9UMNJifMZM/KfkEfWY5tE0Nt8PIrycsCX/f2TwooNK6ew==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-remote-opener@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-remote-opener/-/ide-remote-opener-2.18.5.tgz#a0c478ad90b78085263637e7aa764779af43b790"
-  integrity sha512-TgQ8Fz8iRg4RTtsgifcCAyNGoxBQtGTTZD4tyQlD5I1uio90dUy6T36qFO5f+ptD1AmcS3jkFRAjJfLDyJCkgw==
+"@opensumi/ide-remote-opener@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-remote-opener/-/ide-remote-opener-2.18.6.tgz#2a5b27affd06dd282cdb2ccff6d300cd08c6a74c"
+  integrity sha512-mZnj8s41db+BP+7gqSIUu1c1K5FqYuWu7R9zjmdU2H0BSu26YU0z27/JvZ3io5JL6MTskA4Srbcgk8poSVlAnQ==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
 
-"@opensumi/ide-scm@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-scm/-/ide-scm-2.18.5.tgz#1971ec0bd8856d120e2ab97db5e1a641e34fd51c"
-  integrity sha512-1QsTa52WnXeH7jr3NRzjazzWaEWebLbOrlbHamsqslu4rW5PwSHaVQp4SP1PnyTkTSW8R//HNZPxz7CXx0jVww==
+"@opensumi/ide-scm@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-scm/-/ide-scm-2.18.6.tgz#99dd7aa30c0b3520f12ea8148e6a58a3bfcb8c74"
+  integrity sha512-bEHQoWp2FyxEQ5owGojhotyOfITe85OGkeRSj4Oovwe28Av+1O7q87cYt+PK9aUVyVVQzFYB0ERcWKROI4y+/g==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-search@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-search/-/ide-search-2.18.5.tgz#8ad2a343d26ceb409e287868927510bee8ae3f31"
-  integrity sha512-dyvw15+7/DU6idaWvcPMyqkFyZyQfB3qWvDZYkoypSaAcNgiDh4J6QeAm+wkkP83VisMDMgs4EhtGXAln0Tmqw==
+"@opensumi/ide-search@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-search/-/ide-search-2.18.6.tgz#d4c03fcae4892633429107a8c9771fcab30c248b"
+  integrity sha512-bmdE5URBSZqNuG8kIMzQnpIBv1ofOQRbQHLTUwasp+1oXo0tfGUFsX+YN+cBCoiOnMbV9ZedfLPeR3iT/IIsEA==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-logs" "2.18.5"
-    "@opensumi/ide-process" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-logs" "2.18.6"
+    "@opensumi/ide-process" "2.18.6"
     "@opensumi/vscode-ripgrep" "^1.4.0"
 
-"@opensumi/ide-startup@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-startup/-/ide-startup-2.18.5.tgz#c21a17ab3280f754907b0191c06345b404a4d625"
-  integrity sha512-omArF+rz1LyCTTAjJqAQ45rekPyOqqSEhwqxeBf7MYZObOm0jlRrecgMgfe8stiw5AOqFZjoIrc6/w1e2+JHYw==
+"@opensumi/ide-startup@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-startup/-/ide-startup-2.18.6.tgz#410485b87b60fae7fa87f7c4e98f8de8e94140b0"
+  integrity sha512-MHC4KVDhFTs9Qx+F2duXoXzRQH++PNZjnydFUAev/ECGWtpr1ipUHupDLfaqhjpdAAsIYoNNusWmQsd9HCpplQ==
   dependencies:
-    "@opensumi/ide-addons" "2.18.5"
-    "@opensumi/ide-comments" "2.18.5"
-    "@opensumi/ide-core-browser" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-debug" "2.18.5"
-    "@opensumi/ide-decoration" "2.18.5"
-    "@opensumi/ide-editor" "2.18.5"
-    "@opensumi/ide-explorer" "2.18.5"
-    "@opensumi/ide-extension" "2.18.5"
-    "@opensumi/ide-extension-manager" "2.18.5"
-    "@opensumi/ide-extension-storage" "2.18.5"
-    "@opensumi/ide-file-scheme" "2.18.5"
-    "@opensumi/ide-file-search" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
-    "@opensumi/ide-file-tree-next" "2.18.5"
-    "@opensumi/ide-i18n" "2.18.5"
-    "@opensumi/ide-keymaps" "2.18.5"
-    "@opensumi/ide-logs" "2.18.5"
-    "@opensumi/ide-main-layout" "2.18.5"
-    "@opensumi/ide-markdown" "2.18.5"
-    "@opensumi/ide-markers" "2.18.5"
-    "@opensumi/ide-menu-bar" "2.18.5"
-    "@opensumi/ide-monaco" "2.18.5"
-    "@opensumi/ide-monaco-enhance" "2.18.5"
-    "@opensumi/ide-opened-editor" "2.18.5"
-    "@opensumi/ide-outline" "2.18.5"
-    "@opensumi/ide-output" "2.18.5"
-    "@opensumi/ide-overlay" "2.18.5"
-    "@opensumi/ide-preferences" "2.18.5"
-    "@opensumi/ide-process" "2.18.5"
-    "@opensumi/ide-quick-open" "2.18.5"
-    "@opensumi/ide-remote-opener" "2.18.5"
-    "@opensumi/ide-scm" "2.18.5"
-    "@opensumi/ide-search" "2.18.5"
-    "@opensumi/ide-static-resource" "2.18.5"
-    "@opensumi/ide-status-bar" "2.18.5"
-    "@opensumi/ide-storage" "2.18.5"
-    "@opensumi/ide-task" "2.18.5"
-    "@opensumi/ide-terminal-next" "2.18.5"
-    "@opensumi/ide-testing" "2.18.5"
-    "@opensumi/ide-theme" "2.18.5"
-    "@opensumi/ide-toolbar" "2.18.5"
-    "@opensumi/ide-userstorage" "2.18.5"
-    "@opensumi/ide-variable" "2.18.5"
-    "@opensumi/ide-webview" "2.18.5"
-    "@opensumi/ide-workspace" "2.18.5"
-    "@opensumi/ide-workspace-edit" "2.18.5"
+    "@opensumi/ide-addons" "2.18.6"
+    "@opensumi/ide-comments" "2.18.6"
+    "@opensumi/ide-core-browser" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-debug" "2.18.6"
+    "@opensumi/ide-decoration" "2.18.6"
+    "@opensumi/ide-editor" "2.18.6"
+    "@opensumi/ide-explorer" "2.18.6"
+    "@opensumi/ide-extension" "2.18.6"
+    "@opensumi/ide-extension-manager" "2.18.6"
+    "@opensumi/ide-extension-storage" "2.18.6"
+    "@opensumi/ide-file-scheme" "2.18.6"
+    "@opensumi/ide-file-search" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
+    "@opensumi/ide-file-tree-next" "2.18.6"
+    "@opensumi/ide-i18n" "2.18.6"
+    "@opensumi/ide-keymaps" "2.18.6"
+    "@opensumi/ide-logs" "2.18.6"
+    "@opensumi/ide-main-layout" "2.18.6"
+    "@opensumi/ide-markdown" "2.18.6"
+    "@opensumi/ide-markers" "2.18.6"
+    "@opensumi/ide-menu-bar" "2.18.6"
+    "@opensumi/ide-monaco" "2.18.6"
+    "@opensumi/ide-monaco-enhance" "2.18.6"
+    "@opensumi/ide-opened-editor" "2.18.6"
+    "@opensumi/ide-outline" "2.18.6"
+    "@opensumi/ide-output" "2.18.6"
+    "@opensumi/ide-overlay" "2.18.6"
+    "@opensumi/ide-preferences" "2.18.6"
+    "@opensumi/ide-process" "2.18.6"
+    "@opensumi/ide-quick-open" "2.18.6"
+    "@opensumi/ide-remote-opener" "2.18.6"
+    "@opensumi/ide-scm" "2.18.6"
+    "@opensumi/ide-search" "2.18.6"
+    "@opensumi/ide-static-resource" "2.18.6"
+    "@opensumi/ide-status-bar" "2.18.6"
+    "@opensumi/ide-storage" "2.18.6"
+    "@opensumi/ide-task" "2.18.6"
+    "@opensumi/ide-terminal-next" "2.18.6"
+    "@opensumi/ide-testing" "2.18.6"
+    "@opensumi/ide-theme" "2.18.6"
+    "@opensumi/ide-toolbar" "2.18.6"
+    "@opensumi/ide-userstorage" "2.18.6"
+    "@opensumi/ide-variable" "2.18.6"
+    "@opensumi/ide-webview" "2.18.6"
+    "@opensumi/ide-workspace" "2.18.6"
+    "@opensumi/ide-workspace-edit" "2.18.6"
     "@opensumi/textmate-languages" "^2.6.1"
 
-"@opensumi/ide-static-resource@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-static-resource/-/ide-static-resource-2.18.5.tgz#a1d4021455fdd0efa2d912468b066355b3270259"
-  integrity sha512-DbltJCi2xqDc3Pa6/d+9Kgvr4E/1UD304RscEIHXZg8YmzNH1LzzOBoBSzlIdMDo7LLCJfGlaLd1Mt1t1YNz5g==
+"@opensumi/ide-static-resource@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-static-resource/-/ide-static-resource-2.18.6.tgz#4e762cab3406e5b2abc88d82f16b620f9872bbd5"
+  integrity sha512-N5b0fXAPZy+WmyJxHzY0xCkVfanv/V4uOQlHCbbslOUZnHgdLQGDzX9e+yVTeshVzQFeHhLgh9ELgl4WlkI8Fg==
 
-"@opensumi/ide-status-bar@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-status-bar/-/ide-status-bar-2.18.5.tgz#5552d742ede12f1836b05248ddca8ed441d46a69"
-  integrity sha512-yZme2wCpSFGogZeekX9pNoT3TPzWns4PcpSHF31n8PqbFeUqnlygwZIyhSWq2/U7IYyeWOd2c7JNwcQI7449tA==
+"@opensumi/ide-status-bar@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-status-bar/-/ide-status-bar-2.18.6.tgz#2552e23c220da51b9c58ac5b31d6f586a4d261b2"
+  integrity sha512-ZFiyDNgZEeiQSe5O5C6ytc84zEJIoiKkfi63+0WtlNwss+dregdzZwr1MJDzVofjcLgvZKEc25Z7OIZ0Q4bRDg==
   dependencies:
-    "@opensumi/ide-components" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-theme" "2.18.5"
+    "@opensumi/ide-components" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-theme" "2.18.6"
 
-"@opensumi/ide-storage@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-storage/-/ide-storage-2.18.5.tgz#53b1c2a1c6c60f5d9cf7988c3fa7f8835fc0ff12"
-  integrity sha512-wIZy6l/To4QIEDs0AHwWl3W2WHUcon4E3GnDWtRnYZYf82qO54qnpjkNs7euzNvW+zOCS9g1uk9lzqxgY8i/PA==
+"@opensumi/ide-storage@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-storage/-/ide-storage-2.18.6.tgz#07fdb4878942978a916f3b4c8e9e28f52245839f"
+  integrity sha512-uH6o1eB3PDStFQ91ytiziWURSNQu2SXxGRmdjszgbCM4sBgSl3mpJY4sZD5XifZn6btPYsjGLpjFpSaMsuXgSQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-task@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-task/-/ide-task-2.18.5.tgz#f3fd97b07174939a14f3b11c6987b101d54ec564"
-  integrity sha512-Aig9KcfEFDLl5kPkdRmg8ZlFWU+V1h/38J8X5Q1jiAX74AGbINuyEw8jnXzRXWetL5a/2Z26BOUzdr0ycKLKyg==
+"@opensumi/ide-task@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-task/-/ide-task-2.18.6.tgz#37622b6b9627931f9017445362cd875a8cd20010"
+  integrity sha512-ubfXYabk230GY7KHI68GCPisKnyy7o2dPmRV41nyKNB881kIbsaEF5duqHJyhk6mYleqeZpX1Dv/AcAO9PGOeQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-terminal-next" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-terminal-next" "2.18.6"
 
-"@opensumi/ide-terminal-next@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-terminal-next/-/ide-terminal-next-2.18.5.tgz#52fef800884c496ece4cc2089cbfe2f8f7f4707c"
-  integrity sha512-o+dvQVK196NH6cOBNn66ylTGnkQkr9IU8zkuKgKr/N8Hc2vtCVfOkFpNtB2NZt2klaPIP9SZkAjg8TvQpK7EYA==
+"@opensumi/ide-terminal-next@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-terminal-next/-/ide-terminal-next-2.18.6.tgz#e0a7287889c48ac81946c573e080f6c7fcb6e5f8"
+  integrity sha512-sDxPJ0g+1cX6m2TerVWTJw+uzhXUvikg+poAH9N1TFdYOn4dA8HOyk05ZbMCNYxfs3dSJKxQSlfMbPviYChYLA==
   dependencies:
-    "@opensumi/ide-connection" "2.18.5"
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
+    "@opensumi/ide-connection" "2.18.6"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
     event-kit "^2.5.3"
     node-pty "0.11.0-beta19"
     os-locale "^4.0.0"
@@ -572,72 +572,72 @@
     xterm-addon-fit "^0.5.0"
     xterm-addon-search "0.9.0-beta.16"
 
-"@opensumi/ide-testing@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-testing/-/ide-testing-2.18.5.tgz#0dbf42b343a080d2899ba35889ee002482c1d63f"
-  integrity sha512-LMkcUw6e8IVESrr+GaINPJZBSP0e6ulUs4G5yema7ewsa0x3ENzG1afmVw1rThX1HueDbeF+dkH2R3XHgfjeXA==
+"@opensumi/ide-testing@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-testing/-/ide-testing-2.18.6.tgz#f878308c6d3aaa271a67c2ec5a152c0244e9ad9f"
+  integrity sha512-tmpyyDLIUE01q4PTerepS37pVjoHisb0Z8CIJ6htQz4UBDbuIDF0KfUqRmE4P/3++VhxwZtDJxEQYT9pR4ECkw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-theme@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-theme/-/ide-theme-2.18.5.tgz#4ca0b04730788cd505311f7af5ff0a466c35b41a"
-  integrity sha512-khDiBoMx2kIPn7dKQtBWLCG9Yod4NjPCZOtgzOx5QL5E7PUflVjf+EKZhU1imw9VjXS124E8OW9NuDJTz66q9Q==
+"@opensumi/ide-theme@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-theme/-/ide-theme-2.18.6.tgz#e56640fcb96c10a4caa70e9f82c092c0e1d12aa7"
+  integrity sha512-W/9DVoXSPza9zUs+cJGDLgfz1N1Tx354hPrhuawqG9Spc5JwjsCsLp6Rxm7fJsqAAmMGVp3A2FdLlSc/jjJoJw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-toolbar@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-toolbar/-/ide-toolbar-2.18.5.tgz#a3c8df844ec89c266769c2b89d1049950f9b61d3"
-  integrity sha512-x48egupRAl15J8qzvBA3//dXHbwOhf/NIa5TYaLPZTofeCsktC3HUPZhEEUmkog5TqH0CICM5bphAKVAB4Pn7g==
+"@opensumi/ide-toolbar@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-toolbar/-/ide-toolbar-2.18.6.tgz#100527bde089bbdbb304284e11fa1357a92a5249"
+  integrity sha512-S8N7UvjxyZ6JqbmULOXxJsgnu72mUxZNP9GvjJlPZBKlmezjq+69wNaVW9Eqj2+KD2/4vVDfwGTakS28hkw3xg==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-userstorage@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-userstorage/-/ide-userstorage-2.18.5.tgz#a2fe927b2f000cbfd6989d269ae9ef6d903a2519"
-  integrity sha512-226a9BIy4meYSaB6rzVSHlDmibxW4TcSKiMMHxZrBgbzLgUsfO4oAeQ6l+23iI8KgleyXQGhIsO8Ea6EdfFSng==
+"@opensumi/ide-userstorage@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-userstorage/-/ide-userstorage-2.18.6.tgz#272f6c5638cfc4f55be0e5b8e69f03312407df80"
+  integrity sha512-suJGxsH6U/g5ubyGLfKrGM/VMujzS1MYYkIDVXJXOQmK6ShKXF5zVYRitl6L11EoHhDKkMM8+zc/L3V9/ARkxQ==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-utils@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-utils/-/ide-utils-2.18.5.tgz#8137b359c7bf8eb36e1c9b7ce290c64e4d92ca45"
-  integrity sha512-FBJl9CTPuGY6bMRy4q+NlKel7aXzVnyy/XW4XJzFSD+wmjNnLCDKxxtAy69hpEzDZ3O03SSlqCT5ldoetw5nNg==
+"@opensumi/ide-utils@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-utils/-/ide-utils-2.18.6.tgz#daac750c3f45976fd5d7143a001f531dbc528e5a"
+  integrity sha512-NXw+tUg68gJS07Qcx8qWGbtMis6TdFUmABTWMdfxTf9FsLBUqQeiD1PppZC0QDceqFLubsHIpIQz9kdbn6LRuw==
   dependencies:
     iconv-lite "^0.6.3"
     nanoid "^3.3.3"
     vscode-uri "^3.0.2"
 
-"@opensumi/ide-variable@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-variable/-/ide-variable-2.18.5.tgz#ed0d72f478e369078a5705262002e5f194fd0a67"
-  integrity sha512-Iq3gVGUa8dfcBvwv+BJVO8JJ7sJx8BnwZAthesrMPU+veIda1edMgP6sZcZ9MiRjBxJsl1fx0Pkvheobz80XcQ==
+"@opensumi/ide-variable@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-variable/-/ide-variable-2.18.6.tgz#dcfb1b7c40c3fdcbe3136707ed3c9e1b95765e86"
+  integrity sha512-/rChNhd3Uf7dHVZJ71F/TVAh1qYfvc4sWY/GGULHMgwlOLSWQfL6+jMT1EdsDfrewpl+ZdMA57DKqsJdgD5QPA==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-webview@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-webview/-/ide-webview-2.18.5.tgz#797e219d21867a0491928378dd277c5ec2ffb4e0"
-  integrity sha512-OI+kT5BybCq/6Dj9BnzQ11D9Aes4wvzIkYbYvo5zeYopqxFL7vE1BEOQc1A9UpDqJVjBPYrIleoPs3qfurXwgQ==
+"@opensumi/ide-webview@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-webview/-/ide-webview-2.18.6.tgz#077486162a3a4fbdff8b27d0d66b3edc77c2361f"
+  integrity sha512-0QrKAPWVjTMlaAt3Chr+a+WRJN+rXrN4yRiO0YfXT8N+ysiXH4SDuoFOxTL0wu7DfWk3h9ETMFzsbUglaSzmdw==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-core-node" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-core-node" "2.18.6"
 
-"@opensumi/ide-workspace-edit@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-workspace-edit/-/ide-workspace-edit-2.18.5.tgz#f3be4edeea98cf875cf3a578094e65480dc66557"
-  integrity sha512-ATdxw6SeZySYqK8WilZN7KSy/Q29g9sWiFj4BaZkH7K9IonWwf6XnLtNSIAqHiThUDRsCYRzRd8BKJdIxWiUyQ==
+"@opensumi/ide-workspace-edit@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-workspace-edit/-/ide-workspace-edit-2.18.6.tgz#58710f9b902f7071c572040f77371639b0515630"
+  integrity sha512-XMbADFJbshyane3krH7I3sCuYNefV6rSQkPSHHQOXx4PtiYcZhBsZ/WM/zXNUIWU3tsBDm0IBshFot156rJDDA==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
 
-"@opensumi/ide-workspace@2.18.5":
-  version "2.18.5"
-  resolved "https://registry.yarnpkg.com/@opensumi/ide-workspace/-/ide-workspace-2.18.5.tgz#d07e4b17c1b27adf0917c1e12b8a0bae06d9909e"
-  integrity sha512-hq/WxcXCEMdYVhRHNSQ6qoVavDlKRS6njD22a2arRPxXBdd8H3BsXuLdZwC5/YBNBHku1MYSYua5Sk9ED5jpSA==
+"@opensumi/ide-workspace@2.18.6":
+  version "2.18.6"
+  resolved "https://registry.yarnpkg.com/@opensumi/ide-workspace/-/ide-workspace-2.18.6.tgz#0e488e4133c2d6129cc6e167145a426a3474b2f9"
+  integrity sha512-M+VqM6jwrdY2SBJua4dzZVoBrWaLhOqY9K/CCUHfO09ALauGLUCeDo7KDFjREPcr1924BFPlnwRIY6TeZ9G7eg==
   dependencies:
-    "@opensumi/ide-core-common" "2.18.5"
-    "@opensumi/ide-file-service" "2.18.5"
+    "@opensumi/ide-core-common" "2.18.6"
+    "@opensumi/ide-file-service" "2.18.6"
 
 "@opensumi/monaco-editor-core@0.29.1-patch.1":
   version "0.29.1-patch.1"
