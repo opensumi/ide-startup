@@ -23,12 +23,13 @@
 ```bash
 $ git clone git@github.com:opensumi/ide-startup.git
 $ cd ide-startup
-$ yarn              # 安装依赖后会自动执行 prepare，编译 Node.js 和 WebWorker 两个插件环境, 下载默认插件
-$ mkdir workspace   # 创建默认的 workspace 目录，启动后会默认打开该目录
-$ yarn start        # 启动前端、后端服务器及 Webview Host
+$ yarn                       # 安装依赖后会自动执行 prepare，编译 Node.js 和 WebWorker 两个插件环境, 下载默认插件
+$ mkdir workspace            # 创建默认的 workspace 目录，启动后会默认打开该目录
+$ yarn download:extensions   # 安装默认内置插件
+$ yarn start                 # 启动前端、后端服务器及 Webview Host
 ```
 
-浏览器打开 `http://0.0.0.0:8080`
+浏览器打开 [http://0.0.0.0:8080](http://0.0.0.0:8080)
 
 URL 添加 query 参数 `workspaceDir` 即可打开指定目录，例如 `http://0.0.0.0:8080?workspaceDir=/path/to/dir`
 
