@@ -14,9 +14,6 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
   const extensionHost = process.env.EXTENSION_HOST_ENTRY || path.join(__dirname, '..', '..', 'hosted/ext.process.js');
   let opts: IServerAppOpts = {
     use: app.use.bind(app),
-    marketplace: {
-      endpoint: 'https://open-vsx.org/api',
-    },
     processCloseExitThreshold: 5 * 60 * 1000,
     terminalPtyCloseThreshold: 5 * 60 * 1000,
     staticAllowOrigin: '*',
