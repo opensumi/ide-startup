@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "npm run compile:worker-host && npm run compile:ext-host",
+    "postinstall": "npm run compile:worker-host && npm run compile:ext-host && npm run download:extensions",
     "download:extensions": "node scripts/download.js",
     "compile:browser": "webpack --config ./configs/webpack.browser.config.js",
     "compile:node": "webpack --config ./configs/webpack.node.config.js",
