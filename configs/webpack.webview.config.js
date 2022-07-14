@@ -59,7 +59,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: distDir + '/public',
+    contentBase: path.join(__dirname, '../dist'),
     disableHostCheck: true,
     port,
     host: '0.0.0.0',
