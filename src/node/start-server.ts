@@ -13,7 +13,7 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
   const workspaceDir = process.env.WORKSPACE_DIR || path.join(__dirname, '../../workspace');
   const extensionDir = process.env.EXTENSION_DIR || path.join(__dirname, '../../extensions');
   const extensionHost = process.env.EXTENSION_HOST_ENTRY || 
-  process.env.NODE_ENV === 'production' ? path.join(__dirname, '..', 'hosted/ext.host.js') : path.join(__dirname, '..', '..', 'hosted/ext.host.js');
+  process.env.NODE_ENV === 'production' ? path.join(__dirname, '..', '..', 'hosted/ext.process.js') : path.join(__dirname, '..', '..', 'hosted/ext.process.js');
   let opts: IServerAppOpts = {
     use: app.use.bind(app),
     processCloseExitThreshold: 5 * 60 * 1000,
