@@ -29,5 +29,8 @@
     "typeRoots": [
       "./node_modules/@types"
     ]
-  }
+  },
+  "exclude": [
+    "extensions"
+  ]
 }
