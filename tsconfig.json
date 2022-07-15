@@ -29,5 +29,13 @@
     "typeRoots": [
       "./node_modules/@types"
     ]
-  }
+  },
+  "exclude": [
+    "./extensions/**/*",
+    "./workspace/**/*",
+    "./hosted/**/*",
+    "./dist-node/**/*",
+    "./dist/**/*",
+    "./node_modules/**/*",
+  ]
 }
