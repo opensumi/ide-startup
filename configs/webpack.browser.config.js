@@ -1,6 +1,5 @@
 const path = require('path');
 const fs = require('fs');
-
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -9,19 +8,27 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const esbuild = require('esbuild');
+const { resolveTSConfig } = require('./utils');
 
 const tsConfigPath = path.join(__dirname, '../tsconfig.json');
 const srcDir = path.join(__dirname, '..', 'src', 'browser');
 const distDir = path.join(__dirname, '..', 'dist');
 const port = 8080;
 
-const isDevelopment = process.env['NODE_ENV'] === 'development' || process.env['NODE_ENV'] === 'dev';
+const isDevelopment =
+  process.env['NODE_ENV'] === 'development' || process.env['NODE_ENV'] === 'dev';
 
 const idePkg = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '..', './node_modules/@opensumi/ide-core-browser/package.json')).toString(),
+  fs
+    .readFileSync(
+      path.join(__dirname, '..', './node_modules/@opensumi/ide-core-browser/package.json'),
+    )
+    .toString(),
 );
 
-const styleLoader = process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader';
+const styleLoader =
+  process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader';
 
 module.exports = {
   entry: srcDir,
@@ -55,14 +62,12 @@ module.exports = {
         test: /\.tsx?$/,
         use: [
           {
-            loader: require.resolve('ts-loader'),
+            loader: 'esbuild-loader',
             options: {
-              happyPackMode: true,
-              transpileOnly: true,
-              configFile: tsConfigPath,
-              compilerOptions: {
-                target: 'es2015',
-              },
+              implementation: esbuild,
+              loader: 'tsx',
+              target: ['es2020', 'chrome91', 'node14.16'],
+              tsconfigRaw: resolveTSConfig(path.join(__dirname, '../tsconfig.json')),
             },
           },
         ],
@@ -131,7 +136,20 @@ module.exports = {
   },
   optimization: {
     nodeEnv: process.env.NODE_ENV,
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [
+      new TerserJSPlugin({
+        minify: TerserJSPlugin.esbuildMinify,
+        terserOptions: {
+          drop: ['debugger'],
+          format: 'cjs',
+          minify: true,
+          treeShaking: true,
+          keepNames: true,
+          target: 'es2020',
+        },
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -149,7 +167,9 @@ module.exports = {
       ),
       'process.env.REVERSION': JSON.stringify(idePkg.version || 'alpha'),
       'process.env.DEVELOPMENT': JSON.stringify(!!isDevelopment),
-      'process.env.TEMPLATE_TYPE': JSON.stringify(isDevelopment ? process.env['TEMPLATE_TYPE'] : 'standard'),
+      'process.env.TEMPLATE_TYPE': JSON.stringify(
+        isDevelopment ? process.env['TEMPLATE_TYPE'] : 'standard',
+      ),
     }),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {

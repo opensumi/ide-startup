@@ -1,6 +1,9 @@
 const path = require('path');
-
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const esbuild = require('esbuild');
+
+const { resolveTSConfig } = require('./utils');
 
 const tsConfigPath = path.join(__dirname, '..', 'tsconfig.json');
 const distDir = path.join(__dirname, '..', 'dist');
@@ -17,6 +20,22 @@ module.exports = {
   },
   devtool: 'none',
   mode: 'production',
+  optimization: {
+    nodeEnv: process.env.NODE_ENV,
+    minimizer: [
+      new TerserJSPlugin({
+        minify: TerserJSPlugin.esbuildMinify,
+        terserOptions: {
+          drop: ['debugger'],
+          format: 'cjs',
+          minify: true,
+          treeShaking: true,
+          keepNames: true,
+          target: 'es2020',
+        },
+      }),
+    ],
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     plugins: [
@@ -30,10 +49,17 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: require.resolve('ts-loader'),
-        options: {
-          configFile: tsConfigPath,
-        },
+        use: [
+          {
+            loader: 'esbuild-loader',
+            options: {
+              implementation: esbuild,
+              loader: 'tsx',
+              target: ['es2020', 'chrome91', 'node14.16'],
+              tsconfigRaw: resolveTSConfig(path.join(__dirname, '../tsconfig.json')),
+            },
+          },
+        ],
       },
       { test: /\.css$/, loader: require.resolve('null-loader') },
       { test: /\.less$/, loader: require.resolve('null-loader') },
