@@ -5,6 +5,9 @@ import * as koaStatic from 'koa-static';
 import { Deferred } from '@opensumi/ide-core-common';
 import { IServerAppOpts, ServerApp, NodeModule } from '@opensumi/ide-core-node';
 
+// export const DEFAULT_OPENVSX_REGISTRY = 'https://marketplace.smartide.cn'; // China Mirror
+export const DEFAULT_OPENVSX_REGISTRY = 'https://open-vsx.org'; // Official Registry
+
 export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) {
   const app = new Koa();
   const deferred = new Deferred<http.Server>();
@@ -26,6 +29,12 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
     ],
     extHost: extensionHost,
   };
+
+  opts.marketplace = {
+    endpoint: DEFAULT_OPENVSX_REGISTRY,
+    showBuiltinExtensions: true,
+  }
+  
   if (Array.isArray(arg1)) {
     opts = {
       ...opts,
