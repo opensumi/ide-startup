@@ -12,14 +12,14 @@ export async function renderApp(opts: IClientAppOpts) {
   const hostname = window.location.hostname;
   const query = new URLSearchParams(window.location.search);
   // 线上的静态服务和 IDE 后端是一个 Server
-  const serverPort = process.env.DEVELOPMENT ? 8000: window.location.port;
-  const staticServerPort = process.env.DEVELOPMENT ? 8080: window.location.port;
+  const serverPort = process.env.DEVELOPMENT ? 8000 : window.location.port;
+  const staticServerPort = process.env.DEVELOPMENT ? 8080 : window.location.port;
   const webviewEndpointPort = process.env.DEVELOPMENT ? 8899 : 8000;
   opts.workspaceDir = opts.workspaceDir || query.get('workspaceDir') || process.env.WORKSPACE_DIR;
 
   opts.extensionDir = opts.extensionDir || process.env.EXTENSION_DIR;
   opts.injector = injector;
-  opts.wsPath =  process.env.WS_PATH || `ws://${hostname}:${serverPort}`;
+  opts.wsPath = process.env.WS_PATH || window.location.protocol == 'https:' ? `wss://${hostname}:${serverPort}` : `ws://${hostname}:${serverPort}`;
   opts.extWorkerHost = opts.extWorkerHost || process.env.EXTENSION_WORKER_HOST || `http://${hostname}:${staticServerPort}/worker-host.js`;
   opts.staticServicePath = `http://${hostname}:${serverPort}`;
   const anotherHostName = process.env.WEBVIEW_HOST || hostname;
