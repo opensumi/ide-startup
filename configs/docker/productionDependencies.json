@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "nsfw": "1.2.7",
+    "@parcel/watcher": "2.0.5",
     "node-pty": "0.9.0",
     "spdlog": "0.9.0",
     "@opensumi/vscode-ripgrep": "1.4.0",
