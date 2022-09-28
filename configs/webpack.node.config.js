@@ -46,7 +46,7 @@ module.exports = {
         [
           'node-pty',
           'oniguruma',
-          'nsfw',
+          '@parcel/watcher',
           'spdlog',
           'vm2',
           'canvas',
