@@ -7,9 +7,10 @@ const { resolveTSConfig } = require('./utils');
 
 const tsConfigPath = path.join(__dirname, '..', 'tsconfig.json');
 const distDir = path.join(__dirname, '..', 'dist');
+const srcDir = path.join(__dirname, '..', 'src', 'extension');
 
 module.exports = {
-  entry: require.resolve('@opensumi/ide-extension/lib/hosted/worker.host-preload.js'),
+  entry: path.join(srcDir, 'worker-host'),
   output: {
     filename: 'worker-host.js',
     path: distDir,
