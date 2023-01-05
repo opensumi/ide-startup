@@ -5,8 +5,7 @@ import * as koaStatic from 'koa-static';
 import { Deferred } from '@opensumi/ide-core-common';
 import { IServerAppOpts, ServerApp, NodeModule } from '@opensumi/ide-core-node';
 
-// export const DEFAULT_OPENVSX_REGISTRY = 'https://marketplace.smartide.cn'; // China Mirror
-export const DEFAULT_OPENVSX_REGISTRY = 'https://open-vsx.org'; // Official Registry
+export const DEFAULT_OPENVSX_REGISTRY = 'https://open-vsx.org';
 
 export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) {
   const app = new Koa();
