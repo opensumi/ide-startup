@@ -55,7 +55,7 @@ $ yarn start
 docker pull ghcr.io/opensumi/opensumi-web:latest
 
 # Run
-docker run --rm -d  -p 8080:8000/tcp ghcr.io/opensumi/opensumi-web:latest
+docker run --init --rm -d  -p 8080:8000/tcp ghcr.io/opensumi/opensumi-web:latest
 ```
 
 浏览器打开 `http://0.0.0.0:8080` 访问。
