@@ -31,6 +31,7 @@ WORKDIR /release
 COPY ./configs/docker/productionDependencies.json package.json
 
 RUN yarn --network-timeout 1000000
+RUN yarn global add pm2
 
 COPY --from=builder dist dist
 COPY --from=builder dist-node dist-node
@@ -39,4 +40,4 @@ COPY --from=builder extensions /root/.sumi/extensions
 
 EXPOSE 8000
 
-CMD [ "node", "./dist-node/server/index.js" ]
+CMD [ "pm2-runtime", "./dist-node/server/index.js" ]
