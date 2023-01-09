@@ -54,7 +54,7 @@ You can add `workspaceDir` to the URL to open the specified directory, for examp
 docker pull ghcr.io/opensumi/opensumi-web:latest
 
 # Run
-docker run --rm -d  -p 8080:8000/tcp ghcr.io/opensumi/opensumi-web:latest
+docker run --init --rm -d  -p 8080:8000/tcp ghcr.io/opensumi/opensumi-web:latest
 ```
 
 Open `http://0.0.0.0:8080`
