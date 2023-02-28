@@ -41,6 +41,9 @@ module.exports = {
     ],
   },
   externals: [
+    {
+      nsfw: 'nsfw'
+    },
     function (context, request, callback) {
       if (
         [
