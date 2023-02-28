@@ -1,5 +1,6 @@
 import { Injector } from '@opensumi/di';
-import { ClientApp, IClientAppOpts } from '@opensumi/ide-core-browser';
+import { IClientAppOpts } from '@opensumi/ide-core-browser';
+import { ClientApp } from '@opensumi/ide-core-browser/lib/bootstrap/app';
 import { ToolbarActionBasedLayout } from '@opensumi/ide-core-browser/lib/components';
 import { CoreCommandContribution } from './core-commands';
 import { MenuBarContribution } from './menu-bar/menu-bar.contribution';
