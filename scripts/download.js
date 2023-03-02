@@ -1,22 +1,32 @@
 const path = require('path');
 const rimraf = require('rimraf');
-const mkdirp = require('mkdirp');
 const fs = require('fs-extra');
-const yauzl = require('yauzl');
-const log = require('debug')('install-ext');
+const compressing = require('compressing');
+const log = require('debug')('InstallExtension');
 const os = require('os');
-const got = require('got');
-const urllib = require('urllib');
+const nodeFetch = require('node-fetch');
 const awaitEvent = require('await-event');
-const { v4 } = require('uuid');
+const pipeline = require('stream').pipeline;
+const retry = require('async-retry');
+const marketplaceType = process.env.MARKETPLACE ?? 'opentrs';
 
+// 放置 extension 的目录
 const targetDir = path.resolve(__dirname, '../extensions/');
 
+const extensionFileName = marketplaceType === 'opentrs' ? 'opentrs-extensions.json' : 'vscode-extensions.json';
 const { extensions } = require(path.resolve(
   __dirname,
-  './extensions.json'
+  `./${extensionFileName}`
 ));
+const headers = {};
 
+if (marketplaceType === 'opentrs') {
+  headers['x-master-key'] = '_V_LPJ6Ar-1nrSVa05xDGBYp';
+  headers['x-account-id'] = 'clcJKq_Gea47whxAJGrgoYqf';
+  headers['x-download-mode'] = 'redirect';
+}
+
+// 限制并发数，运行promise
 const parallelRunPromise = (lazyPromises, n) => {
   const results = [];
   let index = 0;
@@ -49,18 +59,22 @@ const parallelRunPromise = (lazyPromises, n) => {
   return new Promise(addWorking);
 };
 
-const api = 'https://open-vsx.org/api/';
-
 async function downloadExtension(url, namespace, extensionName) {
-  const tmpPath = path.join(os.tmpdir(), 'extension', v4());
+  const tmpPath = path.join(os.tmpdir(), 'extension');
   const tmpZipFile = path.join(tmpPath, path.basename(url));
   await fs.mkdirp(tmpPath);
 
   const tmpStream = fs.createWriteStream(tmpZipFile);
-  const data = await got.default.stream(url, { timeout: 100000 });
+  const res = await nodeFetch(url, { timeout: 100000, headers });
 
-  data.pipe(tmpStream);
-  await Promise.race([awaitEvent(data, 'end'), awaitEvent(data, 'error')]);
+  if (res.status !== 200) {
+    throw {
+      message: `${res.status} ${res.statusText}`,
+    };
+  }
+
+  res.body.pipe(tmpStream);
+  await Promise.race([awaitEvent(res.body, 'end'), awaitEvent(res.body, 'error')]);
   tmpStream.close();
 
   const targetDirName = path.basename(`${namespace}.${extensionName}`);
@@ -68,108 +82,53 @@ async function downloadExtension(url, namespace, extensionName) {
   return { tmpZipFile, targetDirName };
 }
 
-function openZipStream(zipFile, entry) {
-  return new Promise((resolve, reject) => {
-    zipFile.openReadStream(entry, (error, stream) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(stream);
-      }
-    });
-  });
-}
-
-function modeFromEntry(entry) {
-  const attr = entry.externalFileAttributes >> 16 || 33188;
-
-  return [448 /* S_IRWXU */, 56 /* S_IRWXG */, 7 /* S_IRWXO */]
-    .map((mask) => attr & mask)
-    .reduce((a, b) => a + b, attr & 61440 /* S_IFMT */);
-}
-
-function createZipFile(zipFilePath) {
-  return new Promise((resolve, reject) => {
-    yauzl.open(zipFilePath, { lazyEntries: true }, (err, zipfile) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(zipfile);
-    });
-  });
-}
-
 function unzipFile(dist, targetDirName, tmpZipFile) {
   const sourcePathRegex = new RegExp('^extension');
-  return new Promise(async (resolve, reject) => {
+  return new Promise((resolve, reject) => {
     try {
       const extensionDir = path.join(dist, targetDirName);
-      // 创建插件目录
-      await fs.mkdirp(extensionDir);
-
-      const zipFile = await createZipFile(tmpZipFile);
-      zipFile.readEntry();
-      zipFile.on('error', (e) => {
-        reject(e);
-      });
-
-      zipFile.on('close', () => {
-        if (!fs.pathExistsSync(path.join(extensionDir, 'package.json'))) {
-          reject(`Download Error: ${extensionDir}/package.json`);
-          return;
-        }
-        fs.remove(tmpZipFile).then(() => resolve(extensionDir));
-      });
-
-      zipFile.on('entry', (entry) => {
-        if (!sourcePathRegex.test(entry.fileName)) {
-          zipFile.readEntry();
-          return;
-        }
-        let fileName = entry.fileName.replace(sourcePathRegex, '');
-
-        if (/\/$/.test(fileName)) {
-          const targetFileName = path.join(extensionDir, fileName);
-          fs.mkdirp(targetFileName).then(() => zipFile.readEntry());
-          return;
-        }
-
-        let originalFileName;
-        // 在Electron中，如果解包的文件中存在.asar文件，会由于Electron本身的bug导致无法对.asar创建writeStream
-        // 此处先把.asar文件写到另外一个目标文件中，完成后再进行重命名
-        if (fileName.endsWith('.asar') && this.options.isElectronEnv) {
-          originalFileName = fileName;
-          fileName += '_prevent_bug';
-        }
-        const readStream = openZipStream(zipFile, entry);
-        const mode = modeFromEntry(entry);
-        readStream.then((stream) => {
-          const dirname = path.dirname(fileName);
-          const targetDirName = path.join(extensionDir, dirname);
-          if (targetDirName.indexOf(extensionDir) !== 0) {
-            throw new Error(`invalid file path ${targetDirName}`);
+      const stream = new compressing.zip.UncompressStream({ source: tmpZipFile });
+      stream
+        .on('error', (err) => {
+          reject(err);
+        })
+        .on('finish', () => {
+          if (!fs.pathExistsSync(path.join(extensionDir, 'package.json'))) {
+            reject(`Download Error: ${extensionDir}/package.json`);
+            return;
+          }
+          fs.remove(tmpZipFile).then(() => resolve(extensionDir));
+        })
+        .on('entry', (header, stream, next) => {
+          stream.on('end', next);
+          if (!sourcePathRegex.test(header.name)) {
+            stream.resume();
+            return;
+          }
+          let fileName = header.name.replace(sourcePathRegex, '');
+          if (/\/$/.test(fileName)) {
+            const targetFileName = path.join(extensionDir, fileName);
+            fs.mkdirp(targetFileName, (err) => {
+              if (err) {
+                return reject(err);
+              }
+              stream.resume();
+            });
+            return;
           }
           const targetFileName = path.join(extensionDir, fileName);
-
-          fs.mkdirp(targetDirName).then(() => {
-            const writerStream = fs.createWriteStream(targetFileName, { mode });
-            writerStream.on('close', () => {
-              if (originalFileName) {
-                // rename .asar, if filename has been modified
-                fs.renameSync(
-                  targetFileName,
-                  path.join(extensionDir, originalFileName)
-                );
+          fs.mkdirp(path.dirname(targetFileName), (err) => {
+            if (err) {
+              return reject(err);
+            }
+            const writerStream = fs.createWriteStream(targetFileName, { mode: header.mode });
+            pipeline(stream, writerStream, (err) => {
+              if (err) {
+                return reject(err);
               }
-              zipFile.readEntry();
             });
-            stream.on('error', (err) => {
-              throw err;
-            });
-            stream.pipe(writerStream);
           });
         });
-      });
     } catch (err) {
       reject(err);
     }
@@ -177,29 +136,33 @@ function unzipFile(dist, targetDirName, tmpZipFile) {
 }
 
 const installExtension = async (namespace, name, version) => {
-  const path = version
-    ? `${namespace}/${name}/${version}`
-    : `${namespace}/${name}`;
-  const res = await urllib.request(`${api}${path}`, {
-    dataType: 'json',
-    timeout: 100000,
-  });
-  if (res.data.files && res.data.files.download) {
-    const { targetDirName, tmpZipFile } = await downloadExtension(
-      res.data.files.download,
-      namespace,
-      name
-    );
-    // 解压插件
-    await unzipFile(targetDir, targetDirName, tmpZipFile);
+  let downloadUrl = '';
+
+  if (marketplaceType === 'opentrs') {
+    downloadUrl = `https://marketplace.opentrs.cn/openapi/ide/download/${namespace}.${name}?version=${version}`;
+  } else {
+    const path = version ? `${namespace}/${name}/${version}` : `${namespace}/${name}`;
+    const getDetailApi = `https://open-vsx.org/api/${path}`;
+    const res = await nodeFetch(getDetailApi, { timeout: 100000, headers });
+    const data = await res.json();
+
+    downloadUrl = data.files?.download;
+  }
+
+  if (downloadUrl) {
+    const { targetDirName, tmpZipFile } = await downloadExtension(downloadUrl, namespace, name);
+
+    // 解压插件，使用 opentrs 插件时解压缩容易出错，因此这里加一个重试逻辑
+    await retry(() => unzipFile(targetDir, targetDirName, tmpZipFile), { retries: 5 });
+
     rimraf.sync(tmpZipFile);
   }
 };
 
 const downloadVscodeExtensions = async () => {
-  log('清空 vscode extension 目录：%s', targetDir);
+  log('Empty the extension directory: %s', targetDir);
   rimraf.sync(targetDir);
-  mkdirp.sync(targetDir);
+  fs.mkdirpSync(targetDir);
 
   const promises = [];
   const publishers = Object.keys(extensions);
@@ -209,7 +172,7 @@ const downloadVscodeExtensions = async () => {
     for (const item of items) {
       const { name, version } = item;
       promises.push(async () => {
-        log('开始安装：%s', name, version);
+        log('Start installation: %s', name, version);
         try {
           await installExtension(publisher, name, version);
         } catch (e) {
@@ -221,7 +184,7 @@ const downloadVscodeExtensions = async () => {
 
   // 限制并发 promise 数
   await parallelRunPromise(promises, 3);
-  log('安装完毕');
+  log('Installation completed');
 };
 
 // 执行并捕捉异常
