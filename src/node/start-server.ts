@@ -3,9 +3,8 @@ import * as http from 'http';
 import * as Koa from 'koa';
 import * as koaStatic from 'koa-static';
 import { Deferred } from '@opensumi/ide-core-common';
+import { DEFAULT_TRS_REGISTRY } from '@opensumi/ide-core-common/lib/const/application';
 import { IServerAppOpts, ServerApp, NodeModule } from '@opensumi/ide-core-node';
-
-export const DEFAULT_OPENVSX_REGISTRY = 'https://open-vsx.org';
 
 export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) {
   const app = new Koa();
@@ -30,7 +29,9 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
   };
 
   opts.marketplace = {
-    endpoint: DEFAULT_OPENVSX_REGISTRY,
+    endpoint: DEFAULT_TRS_REGISTRY.ENDPOINT,
+    accountId: DEFAULT_TRS_REGISTRY.ACCOUNT_ID,
+    masterKey: DEFAULT_TRS_REGISTRY.MASTER_KEY,
     showBuiltinExtensions: true,
   }
   
