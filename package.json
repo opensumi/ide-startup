@@ -75,6 +75,7 @@
     "@opensumi/ide-webview": "2.23.2",
     "@opensumi/ide-workspace": "2.23.2",
     "@opensumi/ide-workspace-edit": "2.23.2",
+    "nsfw": "2.2.0",
     "koa-static": "^5.0.0",
     "node-fetch": "^2.6.1",
     "request": "2.*.*"
