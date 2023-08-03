@@ -7,7 +7,6 @@ import { EditorModule } from '@opensumi/ide-editor/lib/browser';
 import { ExplorerModule } from '@opensumi/ide-explorer/lib/browser';
 import { FileTreeNextModule } from '@opensumi/ide-file-tree-next/lib/browser';
 import { FileServiceClientModule } from '@opensumi/ide-file-service/lib/browser';
-import { StaticResourceModule } from '@opensumi/ide-static-resource/lib/browser';
 import { SearchModule } from '@opensumi/ide-search/lib/browser';
 import { FileSchemeModule } from '@opensumi/ide-file-scheme/lib/browser';
 import { OutputModule } from '@opensumi/ide-output/lib/browser';
@@ -53,7 +52,6 @@ export const CommonBrowserModules: ConstructorOf<BrowserModule>[] = [
   ExplorerModule,
   FileTreeNextModule,
   FileServiceClientModule,
-  StaticResourceModule,
   SearchModule,
   FileSchemeModule,
   OutputModule,
