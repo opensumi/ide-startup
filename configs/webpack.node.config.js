@@ -41,15 +41,13 @@ module.exports = {
     ],
   },
   externals: [
-    {
-      nsfw: 'nsfw'
-    },
     function (context, request, callback) {
       if (
         [
           'node-pty',
           'oniguruma',
           '@parcel/watcher',
+          'nsfw',
           'spdlog',
           'vm2',
           'canvas',
