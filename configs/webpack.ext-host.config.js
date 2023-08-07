@@ -65,11 +65,8 @@ module.exports = {
     ],
   },
   externals: [
-    {
-      nsfw: 'nsfw'
-    },
     function (context, request, callback) {
-      if (['node-pty', 'oniguruma', '@parcel/watcher', 'spdlog', 'efsw', 'getmac'].indexOf(request) !== -1) {
+      if (['node-pty', 'oniguruma', '@parcel/watcher', 'nsfw', 'spdlog', 'efsw', 'getmac'].indexOf(request) !== -1) {
         return callback(null, `commonjs ${request}`);
       }
       callback();
