@@ -1,6 +1,7 @@
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const NodePolyfillPlugin = require('@bytemain/node-polyfill-webpack-plugin');
 const esbuild = require('esbuild');
 
 const { resolveTSConfig } = require('./utils');
@@ -16,10 +17,8 @@ module.exports = {
     path: distDir,
   },
   target: 'webworker',
-  node: {
-    net: 'empty',
-  },
-  devtool: 'none',
+  node: false,
+  devtool: false,
   mode: 'production',
   optimization: {
     nodeEnv: process.env.NODE_ENV,
@@ -44,6 +43,12 @@ module.exports = {
         configFile: tsConfigPath,
       }),
     ],
+    fallback: {
+      net: false,
+      path: false,
+      os: false,
+      crypto: false,
+    },
   },
   module: {
     exprContextCritical: false,
@@ -70,6 +75,10 @@ module.exports = {
     modules: [path.join(__dirname, '../node_modules')],
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     mainFields: ['loader', 'main'],
-    moduleExtensions: ['-loader'],
   },
+  plugins: [
+    new NodePolyfillPlugin({
+      includeAliases: ['process', 'util', 'Buffer'],
+    }),
+  ],
 };

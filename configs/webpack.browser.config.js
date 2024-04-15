@@ -4,10 +4,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const NodePolyfillPlugin = require('@bytemain/node-polyfill-webpack-plugin');
 const esbuild = require('esbuild');
 const { resolveTSConfig } = require('./utils');
 
@@ -32,14 +32,6 @@ const styleLoader =
 
 module.exports = {
   entry: srcDir,
-  node: {
-    net: 'empty',
-    child_process: 'empty',
-    path: 'empty',
-    url: false,
-    fs: 'empty',
-    process: 'mock',
-  },
   output: {
     filename: 'bundle.js',
     path: distDir,
@@ -54,7 +46,7 @@ module.exports = {
   },
   bail: true,
   mode: process.env['NODE_ENV'],
-  devtool: isDevelopment ? 'source-map' : 'null',
+  devtool: isDevelopment ? 'source-map' : false,
   module: {
     exprContextCritical: false,
     rules: [
@@ -74,7 +66,7 @@ module.exports = {
       },
       {
         test: /\.png$/,
-        use: 'file-loader',
+        type: 'asset/resource',
       },
       {
         test: /\.css$/,
@@ -115,16 +107,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext][query]',
+        },
       },
     ],
   },
@@ -132,7 +119,6 @@ module.exports = {
     modules: [path.resolve('node_modules')],
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     mainFields: ['loader', 'main'],
-    moduleExtensions: ['-loader'],
   },
   optimization: {
     nodeEnv: process.env.NODE_ENV,
@@ -171,23 +157,31 @@ module.exports = {
         isDevelopment ? process.env['TEMPLATE_TYPE'] : 'standard',
       ),
     }),
-    new FriendlyErrorsWebpackPlugin({
-      compilationSuccessInfo: {
-        messages: [`Your application is running here: http://localhost:${port}`],
-      },
-      clearConsole: true,
+    new CopyPlugin({
+      patterns: [{ from: path.join(__dirname, '..', './public/'), to: distDir }]
     }),
-    new CopyPlugin([{ from: path.join(__dirname, '..', './public/'), to: distDir }]),
+    new NodePolyfillPlugin({
+      includeAliases: ['process', 'Buffer'],
+    }),
   ],
   devServer: {
-    contentBase: distDir,
+    static: {
+      directory: distDir,
+    },
     port,
     host: '0.0.0.0',
+    allowedHosts: 'all',
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
     },
-    overlay: true,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+        runtimeErrors: false,
+      },
+    },
   },
 };

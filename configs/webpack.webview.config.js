@@ -2,6 +2,7 @@ const path = require('path');
 const entry = require.resolve('@opensumi/ide-webview/lib/webview-host/web-preload.js');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NodePolyfillPlugin = require('@bytemain/node-polyfill-webpack-plugin');
 
 const tsConfigPath = path.join(__dirname, '../tsconfig.json');
 const distDir = path.join(__dirname, '..', 'dist/webview');
@@ -9,14 +10,6 @@ const port = 8899;
 
 module.exports = {
   entry,
-  node: {
-    net: 'empty',
-    child_process: 'empty',
-    path: 'empty',
-    url: false,
-    fs: 'empty',
-    process: 'mock',
-  },
   output: {
     filename: 'webview.js',
     path: distDir,
@@ -51,20 +44,30 @@ module.exports = {
     modules: [path.join(__dirname, '../../../node_modules'), path.join(__dirname, '../node_modules'), path.resolve('node_modules')],
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     mainFields: ['loader', 'main'],
-    moduleExtensions: ['-loader'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.dirname(entry) + '/webview.html',
     }),
+    new NodePolyfillPlugin({
+      includeAliases: ['process', 'Buffer'],
+    }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, '../dist'),
-    disableHostCheck: true,
+    static: {
+      directory: path.join(__dirname, '../dist'),
+    },
+    allowedHosts: 'all',
     port,
     host: '0.0.0.0',
     quiet: true,
-    overlay: true,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+        runtimeErrors: false,
+      },
+    },
     open: false,
     hot: true,
   },

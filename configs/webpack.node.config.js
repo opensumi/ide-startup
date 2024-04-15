@@ -41,7 +41,7 @@ module.exports = {
     ],
   },
   externals: [
-    function (context, request, callback) {
+    function ({context, request}, callback) {
       if (
         [
           'node-pty',
@@ -65,6 +65,5 @@ module.exports = {
     modules: [path.join(__dirname, './node_modules')],
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     mainFields: ['loader', 'main'],
-    moduleExtensions: ['-loader'],
   },
 };
