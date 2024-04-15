@@ -11,3 +11,5 @@ lib/**/*.d.ts
 src/**/*.d.ts
 *.d.ts.map
 .vscode
+
+yarn-error.log
