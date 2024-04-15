@@ -21,6 +21,15 @@ module.exports = {
         configFile: tsConfigPath,
       }),
     ],
+    fallback: {
+      net: false,
+      path: false,
+      os: false,
+      crypto: false,
+      child_process: false,
+      url: false,
+      fs: false,
+    },
   },
   bail: true,
   mode: 'development',
@@ -60,7 +69,6 @@ module.exports = {
     allowedHosts: 'all',
     port,
     host: '0.0.0.0',
-    quiet: true,
     client: {
       overlay: {
         errors: true,

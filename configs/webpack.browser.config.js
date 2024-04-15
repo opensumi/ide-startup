@@ -43,6 +43,15 @@ module.exports = {
         configFile: tsConfigPath,
       }),
     ],
+    fallback: {
+      net: false,
+      path: false,
+      os: false,
+      crypto: false,
+      child_process: false,
+      url: false,
+      fs: false,
+    },
   },
   bail: true,
   mode: process.env['NODE_ENV'],
@@ -80,8 +89,9 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              modules: true,
-              localIdentName: '[local]___[hash:base64:5]',
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]',
+              }
             },
           },
           {
@@ -95,6 +105,11 @@ module.exports = {
           styleLoader,
           {
             loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]',
+              }
+            },
           },
           {
             loader: 'less-loader',
@@ -110,7 +125,7 @@ module.exports = {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext][query]',
+          filename: 'fonts/[name]-[hash:8][ext][query]',
         },
       },
     ],
@@ -139,7 +154,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '..', 'public', 'index.html'),
+      template: path.join(__dirname, 'templates', 'index.html'),
     }),
     new MiniCssExtractPlugin({
       filename: 'main.css',
