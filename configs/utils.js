@@ -11,11 +11,9 @@ function resolveTSConfig(configFile) {
     encoding: 'utf8',
     shell: true,
   });
-
   const data = result.stdout;
-  const start = data.indexOf('{');
-  const end = data.lastIndexOf('}') + 1;
-  const json = JSON5.parse(data.substring(start, end));
+  const lines = data.split('\n');
+  const json = JSON5.parse(lines.slice(1).join('\n'));
   return json;
 }
 exports.resolveTSConfig = resolveTSConfig;
