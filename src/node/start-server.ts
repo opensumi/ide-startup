@@ -3,7 +3,7 @@ import * as http from 'http';
 import * as Koa from 'koa';
 import * as koaStatic from 'koa-static';
 import { Deferred } from '@opensumi/ide-core-common';
-import { DEFAULT_TRS_REGISTRY } from '@opensumi/ide-core-common/lib/const/application';
+import { DEFAULT_ALIPAY_CLOUD_REGISTRY } from '@opensumi/ide-core-common/lib/const/application';
 import { IServerAppOpts, ServerApp, NodeModule } from '@opensumi/ide-core-node';
 
 export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) {
@@ -29,9 +29,9 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
   };
 
   opts.marketplace = {
-    endpoint: DEFAULT_TRS_REGISTRY.ENDPOINT,
-    accountId: DEFAULT_TRS_REGISTRY.ACCOUNT_ID,
-    masterKey: DEFAULT_TRS_REGISTRY.MASTER_KEY,
+    endpoint: DEFAULT_ALIPAY_CLOUD_REGISTRY.ENDPOINT,
+    accountId: DEFAULT_ALIPAY_CLOUD_REGISTRY.ACCOUNT_ID,
+    masterKey: DEFAULT_ALIPAY_CLOUD_REGISTRY.MASTER_KEY,
     showBuiltinExtensions: true,
   }
   

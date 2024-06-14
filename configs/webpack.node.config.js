@@ -1,5 +1,5 @@
 const path = require('path');
-
+const webpack = require('webpack');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const tsConfigPath = path.join(__dirname, '..', '/tsconfig.json');
@@ -12,14 +12,21 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: distDir,
+    clean: true,
   },
   node: false,
-  mode: 'production',
+  // mode: process.env.NODE_ENV || 'development',
+  mode: "production",
+  devtool: 'source-map',
   optimization: {
     minimize: true,
   },
+  cache: {
+    type: 'filesystem',
+  },
+  watch: false,
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
     plugins: [
       new TsconfigPathsPlugin({
         configFile: tsConfigPath,
@@ -31,17 +38,26 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: require.resolve('ts-loader'),
-        options: {
-          configFile: tsConfigPath,
-        },
-      },
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              happyPackMode: true,
+              transpileOnly: true,
+              configFile: tsConfigPath,
+              compilerOptions: {
+                target: 'es2016',
+              },
+            },
+          },
+        ],
+      },   
       { test: /\.css$/, loader: 'null-loader' },
       { test: /\.less$/, loader: 'null-loader' },
     ],
   },
   externals: [
-    function (context, request, callback) {
+    function ({ request }, callback) {
       if (
         [
           'node-pty',
@@ -54,6 +70,7 @@ module.exports = {
           '@opensumi/vscode-ripgrep',
           'vertx',
           'keytar',
+          'tsconfig-paths',
         ].indexOf(request) !== -1
       ) {
         return callback(null, `commonjs ${request}`);
@@ -62,9 +79,13 @@ module.exports = {
     },
   ],
   resolveLoader: {
-    modules: [path.join(__dirname, './node_modules')],
-    extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
     mainFields: ['loader', 'main'],
-    moduleExtensions: ['-loader'],
+    modules: [
+      path.join(__dirname, '../../../node_modules'),
+      path.join(__dirname, '../node_modules'),
+      path.resolve('node_modules'),
+    ],
   },
-};
+  plugins: [!process.env.CI && new webpack.ProgressPlugin()],
+}
