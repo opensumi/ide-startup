@@ -5,7 +5,6 @@ import { ToolbarActionBasedLayout } from '@opensumi/ide-core-browser/lib/compone
 import { CoreCommandContribution } from './core-commands';
 import { MenuBarContribution } from './menu-bar/menu-bar.contribution';
 import { StatusBarContribution } from './status-bar/status-bar.contribution';
-import { createRoot } from 'react-dom/client';
 
 export async function renderApp(opts: IClientAppOpts) {
   const injector = new Injector();
@@ -34,6 +33,6 @@ export async function renderApp(opts: IClientAppOpts) {
   app.fireOnReload = () => {
     window.location.reload();
   };
-  const targetDom = document.getElementById('main')!;
-  app.start(app=>createRoot(targetDom).render(app({})) , 'web');
+
+  app.start(document.getElementById('main')!, 'web');
 }
