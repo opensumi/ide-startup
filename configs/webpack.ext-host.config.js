@@ -1,9 +1,6 @@
 const path = require('path');
-const esbuild = require('esbuild');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-const { resolveTSConfig } = require('./utils');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const tsConfigPath = path.join(__dirname, '../tsconfig.json');
 const srcDir = path.join(__dirname, '../src', 'extension');
@@ -16,25 +13,8 @@ module.exports = {
     filename: 'ext.process.js',
     path: distDir,
   },
-  devtool: 'null',
-  mode: 'production',
+  devtool: false,
   node: false,
-  optimization: {
-    nodeEnv: process.env.NODE_ENV,
-    minimizer: [
-      new TerserJSPlugin({
-        minify: TerserJSPlugin.esbuildMinify,
-        terserOptions: {
-          drop: ['debugger'],
-          format: 'cjs',
-          minify: true,
-          treeShaking: true,
-          keepNames: true,
-          target: 'es2020',
-        },
-      }),
-    ],
-  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     plugins: [
@@ -43,6 +23,7 @@ module.exports = {
       }),
     ],
   },
+  mode: "production",
   module: {
     exprContextCritical: false,
     rules: [
@@ -50,23 +31,26 @@ module.exports = {
         test: /\.tsx?$/,
         use: [
           {
-            loader: 'esbuild-loader',
+            loader: 'ts-loader',
             options: {
-              implementation: esbuild,
-              loader: 'tsx',
-              target: ['es2020', 'chrome91', 'node14.16'],
-              tsconfigRaw: resolveTSConfig(path.join(__dirname, '../tsconfig.json')),
+              happyPackMode: true,
+              transpileOnly: true,
+              configFile: tsConfigPath,
+              compilerOptions: {
+                target: 'es2016',
+              },
             },
           },
         ],
+      
       },
-      { test: /\.css$/, loader: require.resolve('null-loader') },
-      { test: /\.less$/, loader: require.resolve('null-loader') },
+      { test: /\.css$/, loader: 'null-loader' },
+      { test: /\.less$/, loader: 'null-loader' },
     ],
   },
   externals: [
-    function (context, request, callback) {
-      if (['node-pty', 'oniguruma', '@parcel/watcher', 'nsfw', 'spdlog', 'efsw', 'getmac'].indexOf(request) !== -1) {
+    function ({ request }, callback) {
+      if (['node-pty', 'nsfw', 'spdlog', 'getmac'].indexOf(request) !== -1) {
         return callback(null, `commonjs ${request}`);
       }
       callback();
@@ -76,6 +60,5 @@ module.exports = {
     modules: [path.join(__dirname, '../node_modules')],
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     mainFields: ['loader', 'main'],
-    moduleExtensions: ['-loader'],
   },
 };
