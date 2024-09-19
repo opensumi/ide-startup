@@ -1,4 +1,4 @@
-FROM node:14 as builder
+FROM node:18 as builder
 
 # 用户工作空间，用于打包到前端工作空间地址
 ENV WORKSPACE_DIR workspace
@@ -16,7 +16,7 @@ RUN yarn --ignore-scripts --network-timeout 1000000 && \
     yarn run download:extensions && \
     rm -rf ./node_modules
 
-FROM node:14 as app
+FROM node:18 as app
 
 ENV WORKSPACE_DIR /workspace
 ENV EXTENSION_DIR /root/.sumi/extensions
