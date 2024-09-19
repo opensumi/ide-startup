@@ -30,7 +30,8 @@ WORKDIR /release
 
 COPY ./configs/docker/productionDependencies.json package.json
 
-RUN yarn --network-timeout 1000000
+RUN yarn config set -H npmRegistryServer "https://registry.npmmirror.com" && \
+    yarn --network-timeout 1000000
 
 COPY --from=builder dist dist
 COPY --from=builder dist-node dist-node
