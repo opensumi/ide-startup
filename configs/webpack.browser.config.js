@@ -40,6 +40,9 @@ module.exports = {
   cache: {
     type: 'filesystem',
   },
+  experiments: {
+    asyncWebAssembly: true,  // 启用异步 WebAssembly 支持
+  },
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
@@ -129,7 +132,7 @@ module.exports = {
         test: /\.svg$/,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name][ext][query]',
+          filename: 'images/[name]-[hash:8][ext][query]',
         },
       },
       {
