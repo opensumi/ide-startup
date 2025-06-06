@@ -4,7 +4,6 @@ import { ClientApp } from '@opensumi/ide-core-browser/lib/bootstrap/app';
 import { CoreCommandContribution } from './core-commands';
 import { MenuBarContribution } from './menu-bar/menu-bar.contribution';
 import { StatusBarContribution } from './status-bar/status-bar.contribution';
-import { AILayout } from '@opensumi/ide-ai-native/lib/browser/layout/ai-layout';
 
 export async function renderApp(opts: IClientAppOpts) {
   const injector = new Injector();
@@ -27,7 +26,6 @@ export async function renderApp(opts: IClientAppOpts) {
   opts.staticServicePath = `http://${hostname}:${serverPort}`;
   const anotherHostName = process.env.WEBVIEW_HOST || hostname;
   opts.webviewEndpoint = `http://${anotherHostName}:${webviewEndpointPort}/webview`;
-  opts.layoutComponent = AILayout;
   const app = new ClientApp(opts);
 
   app.fireOnReload = () => {
